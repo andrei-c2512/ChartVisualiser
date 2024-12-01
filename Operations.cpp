@@ -4,8 +4,6 @@
 #define infinit INT_MAX
 #define epsi 0.0001
 
-/* const OperatiiBinare: set of Char = ['+','','*','/','^', '<','>','=','#'];
-OperatiiUnare: set of Char = ['s','c','a','r','e','l'];  */
 
 bool DifInf(float x)
 {
