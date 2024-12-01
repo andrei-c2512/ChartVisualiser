@@ -1,0 +1,8 @@
+#ifndef PALETTE_H_INCLUDED
+#define PALETTE_H_INCLUDED
+#include "graphics.h"
+
+
+#define BACKGROUND_MAIN CYAN
+#define BACKGROUND_CHART WHITE
+#endif // PALETTE_H_INCLUDED

@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1732965999 source:c:\users\andrei c\documents\graficfunctii\functionprocessor.cpp
+	"FunctionProcessor.h"
+
+1732965999 c:\users\andrei c\documents\graficfunctii\functionprocessor.h
+
+1732970909 source:c:\users\andrei c\documents\graficfunctii\main.cpp
+	<iostream>
+	"GUI/MainLayout.h"
+	"graphics.h"
+	<conio.h>
+
+1732971792 c:\users\andrei c\documents\graficfunctii\gui\mainlayout.h
+	"FunctionView.h"
+	"ChartView.h"
+
+1732969130 c:\users\andrei c\documents\graficfunctii\gui\functionview.h
+	"Layout.h"
+
+1732966707 c:\users\andrei c\documents\graficfunctii\gui\layout.h
+	"View.h"
+
+1732969739 c:\users\andrei c\documents\graficfunctii\gui\view.h
+	"GUICommon.h"
+	"Palette.h"
+
+1732995487 c:\users\andrei c\documents\graficfunctii\gui\guicommon.h
+	<iostream>
+
+1732995487 c:\users\andrei c\documents\graficfunctii\gui\chartview.h
+	"ChartBackgrounnd.h"
+	"Chart.h"
+	"GUICommon.h"
+	<conio.h>
+
+1732979714 c:\users\andrei c\documents\graficfunctii\gui\chartbackgrounnd.h
+	"GUICommon.h"
+	"graphics.h"
+	"Palette.h"
+
+1733056149 c:\users\andrei c\documents\graficfunctii\gui\chart.h
+	"GUICommon.h"
+	"graphics.h"
+
+1733055085 source:c:\users\andrei c\documents\graficfunctii\gui\chart.cpp
+	"Chart.h"
+
+1733054286 source:c:\users\andrei c\documents\graficfunctii\gui\chartbackground.cpp
+	"ChartBackgrounnd.h"
+
+1733055761 source:c:\users\andrei c\documents\graficfunctii\gui\chartview.cpp
+	"ChartView.h"
+
+1732995487 source:c:\users\andrei c\documents\graficfunctii\gui\mainlayout.cpp
+	"MainLayout.h"
+
+1732972939 c:\users\andrei c\documents\graficfunctii\gui\palette.h
+	"graphics.h"
+
+1732995487 source:c:\users\andrei c\documents\graficfunctii\gui\guicommon.cpp
+	"GUICommon.h"
+
