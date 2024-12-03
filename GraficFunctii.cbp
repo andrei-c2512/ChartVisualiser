@@ -52,6 +52,10 @@
 		<Unit filename="GUI/Palette.h" />
 		<Unit filename="GUI/View.h" />
 		<Unit filename="MouseEvent.h" />
+		<Unit filename="Operations.cpp" />
+		<Unit filename="Operations.h" />
+		<Unit filename="date.in" />
+		<Unit filename="date.out" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

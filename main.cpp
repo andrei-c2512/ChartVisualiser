@@ -1,29 +1,14 @@
-#include <iostream>
-#include "GUI/MainLayout.h"
-#include "graphics.h"
-#include <conio.h>
-
-
-#define WINDOW_WIDTH 1400
-#define WINDOW_HEIGHT 800
+#include <bits/stdc++.h>
+#include "FunctionProcessor.h"
 
 using namespace std;
 
 int main()
 {
-    initwindow(WINDOW_WIDTH, WINDOW_HEIGHT);
-
-
-    MainLayout* mainLayout = new MainLayout;
-    initMainLayout(mainLayout , {WINDOW_WIDTH , WINDOW_HEIGHT});
-
-    while(!_kbhit()){
-        runMainLayout(mainLayout);
-    }
-
-    closegraph();
-    destroyMainLayout(mainLayout);
-    delete mainLayout;
+    char* s=new char[101];
+    s=extractFunctionFromFile();
+    extractTokens(s);
+    calculate(s,5);
 
     return 0;
 }
