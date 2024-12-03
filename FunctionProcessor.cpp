@@ -65,7 +65,7 @@ char* extractFunctionFromFile()
                 i++;
                 n++;
             }
-            else if(!isdigit(s[i-1]))
+            else if(!isdigit(s[i-1]) && s[i-1]!='x')
             {
                 char* t = new char[101];
                 strcpy(t,s+i);
@@ -75,6 +75,7 @@ char* extractFunctionFromFile()
                 i++;
             }
         }
+        cout<<s;
     return s;
 }
 float Nr(char* s)
