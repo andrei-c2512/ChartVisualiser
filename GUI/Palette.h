@@ -1,3 +1,4 @@
+#pragma once
 #ifndef PALETTE_H_INCLUDED
 #define PALETTE_H_INCLUDED
 #include "graphics.h"

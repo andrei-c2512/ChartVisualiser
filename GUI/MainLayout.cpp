@@ -1,6 +1,7 @@
 #include "MainLayout.h"
 
-void initMainLayout(MainLayout* layout , Size size0){
+void initMainLayout(MainLayout* layout , Size size0 , const Mouse* mouse){
+    layout->mouse = mouse;
     int m = 5;
     layout->margin = { m , m , m, m};
 
@@ -24,7 +25,7 @@ void initMainLayout(MainLayout* layout , Size size0){
     const Size functionViewSize = horizontalSizeByStretchFactor(layout->s , totalSegments , layout->functionViewStretch);
 
     //TO DO : initFunctionView
-    initChartView(layout->chartView , layout->x + functionViewSize.width , layout->y  , chartSize);
+    initChartView(layout->chartView , layout->x + functionViewSize.width , layout->y  , chartSize , mouse);
 }
 
 void runMainLayout(MainLayout* layout){

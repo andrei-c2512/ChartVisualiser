@@ -1,3 +1,4 @@
+#pragma once
 #ifndef MAINLAYOUT_H_INCLUDED
 #define MAINLAYOUT_H_INCLUDED
 #include "FunctionView.h"
@@ -15,10 +16,12 @@ struct MainLayout{
 
     int functionViewStretch;
     int chartStretch;
+
+    const Mouse* mouse;
 };
 
 
-void initMainLayout(MainLayout* layout, Size s);
+void initMainLayout(MainLayout* layout, Size s , const Mouse* mouse);
 //this function will handle the logic , and if needed , will also call the draw function
 void runMainLayout(MainLayout* layout);
 void drawMainLayout(MainLayout* layout);

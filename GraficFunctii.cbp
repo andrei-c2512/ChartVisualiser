@@ -32,9 +32,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Common.h" />
-		<Unit filename="FunctionProcessor.cpp" />
-		<Unit filename="FunctionProcessor.h" />
 		<Unit filename="GUI/Chart.cpp" />
 		<Unit filename="GUI/Chart.h" />
 		<Unit filename="GUI/ChartBackground.cpp" />
@@ -49,9 +46,10 @@
 		<Unit filename="GUI/Layout.h" />
 		<Unit filename="GUI/MainLayout.cpp" />
 		<Unit filename="GUI/MainLayout.h" />
+		<Unit filename="GUI/Mouse.cpp" />
+		<Unit filename="GUI/Mouse.h" />
 		<Unit filename="GUI/Palette.h" />
 		<Unit filename="GUI/View.h" />
-		<Unit filename="MouseEvent.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

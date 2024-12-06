@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CHARTBACKGROUNND_H_INCLUDED
 #define CHARTBACKGROUNND_H_INCLUDED
 #include "GUICommon.h"

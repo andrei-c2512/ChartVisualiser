@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CHART_H_INCLUDED
 #define CHART_H_INCLUDED
 #include "GUICommon.h"
@@ -15,7 +16,7 @@ struct Chart{
 
     int offsetX;
     int offsetY;
-    float zoom;
+    double zoom;
 };
 
 void initChart(Chart* chart , int x , int y , Size size0);

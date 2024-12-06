@@ -1,6 +1,10 @@
+#pragma once
 #ifndef GUICOMMON_H_INCLUDED
 #define GUICOMMON_H_INCLUDED
 #include <iostream>
+#define CHART_UNIT_SIZE 40
+#define MIN_ZOOM 0.5f
+#define MAX_ZOOM 4.0f
 
 
 struct Size{
@@ -20,7 +24,7 @@ struct Rect{
     Size s;
 };
 
-
+char* intToString(int nr);
 bool intersection(const Rect& rect1 , const Rect& rect2);
 Size adjustSizeToMargins(const Size& s , const Margins& margin);
 Size horizontalSizeByStretchFactor(const Size& totalSize , int segments , int stretch);
