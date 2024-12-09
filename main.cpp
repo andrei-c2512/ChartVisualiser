@@ -7,8 +7,10 @@ int main()
 {
     char* s=new char[101];
     s=extractFunctionFromFile();
+    negativeNumbers(s);
     extractTokens(s);
-    calculate(s,5);
+    calculate(s,7);
+    delete[] s;
 
     return 0;
 }

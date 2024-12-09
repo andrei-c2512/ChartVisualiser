@@ -11,7 +11,7 @@ const char BinaryOperations[] = "+-*/^<>=#";
 const char UnaryOperations[] = "scrael";
 stack<char> operators;
 stack<float> operands;
-bool parenthesis(char* s)
+bool isValidParenthesis(char* s)
 {
     stack<char>p;
     p.push('(');
@@ -19,7 +19,12 @@ bool parenthesis(char* s)
         if(s[i]=='(')
             p.push('(');
         else if(s[i]==')')
-            p.pop();
+        {
+            if(!p.empty())
+                p.pop();
+            else
+                return false;
+        }
     if(p.empty())
         return true;
     else
@@ -27,9 +32,9 @@ bool parenthesis(char* s)
 }
 bool isOperation(char* s)
 {
-    return  parenthesis(s);
+    return  isValidParenthesis(s);//*isValidNumber(s)*isValidBinaryOperation(s)*isValidUnaryOperation(s);
 }
-int Priority(char c)
+int priority(char c)
 {
     if(strchr("()",c)!=0)
         return 0;
@@ -45,6 +50,30 @@ int Priority(char c)
         return 5;
     return -1 ;
 }
+void negativeNumbers(char* s)
+{
+    for(int i=0; i<strlen(s); i++)
+        if(s[i]=='-')
+        {
+            char* t = new char[101];
+            if(i==0)
+            {
+                strcpy(t,s+i);
+                strcpy(s+i+1,t);
+                s[i]='0';
+                i++;
+            }
+            else if(!isdigit(s[i-1]) && s[i-1]!='x')
+            {
+                strcpy(t,s+i);
+                strcpy(s+i+1,t);
+                s[i]='0';
+                i++;
+            }
+            delete[] t;
+        }
+}
+
 char* extractFunctionFromFile()
 {
     char* s = new char[101];
@@ -52,33 +81,9 @@ char* extractFunctionFromFile()
     int n=strlen(s);
     strcpy(s+n,")");
     operators.push('(');
-    n++;
-     for(int i=0; i<n; i++)
-        if(s[i]=='-')
-        {
-            if(i==0)
-            {
-                char* t = new char[101];
-                strcpy(t,s+i);
-                strcpy(s+i+1,t);
-                s[i]='0';
-                i++;
-                n++;
-            }
-            else if(!isdigit(s[i-1]) && s[i-1]!='x')
-            {
-                char* t = new char[101];
-                strcpy(t,s+i);
-                strcpy(s+i+1,t);
-                s[i]='0';
-                n++;
-                i++;
-            }
-        }
-        cout<<s;
     return s;
 }
-float Nr(char* s)
+float number(char* s)
 {
     int n=strlen(s),i=0;
     float nr=0;
@@ -128,7 +133,7 @@ void extractTokens(char* s)
     }
     strcpy(s,t);
 }
-void Function()
+void apllyOperation()
 {
     char op=operators.top();
     operators.pop();
@@ -215,17 +220,17 @@ void calculate(char* t,float x)
         if(p[0]==')')
         {
             while(operators.top()!='(')
-                Function();
+                apllyOperation();
             operators.pop();
         }
         if(isX)
             operands.push(x);
         if(isdigit(p[0]))
-            operands.push(Nr(p));
+            operands.push(number(p));
         if(isBinaryOperation || isUnaryOperation)
         {
-            while(Priority(operators.top()) >= Priority(p[0]))
-                Function();
+            while(priority(operators.top()) >= priority(p[0]))
+                apllyOperation();
             if(p[0]=='s')
             {
                 if(p[1]=='q')
@@ -239,6 +244,6 @@ void calculate(char* t,float x)
         p=strtok(NULL," ");
     }
     while(!operators.empty())
-        Function();
+        apllyOperation();
     fout<<operands.top();
 }
