@@ -1,7 +1,8 @@
+#pragma once
 #ifndef CHARTBACKGROUNND_H_INCLUDED
 #define CHARTBACKGROUNND_H_INCLUDED
 #include "GUICommon.h"
-#include "graphics.h"
+#include "SFML/Graphics.hpp"
 #include "Palette.h"
 
 //the background will look like a math book
@@ -18,7 +19,7 @@ struct ChartBackground{
 };
 
 void initChartBackground(ChartBackground* background , int x , int y , Size size0);
-void drawChartBackground(ChartBackground* background);
+void drawChartBackground(sf::RenderWindow& window, ChartBackground* background);
 void setChartBackgroundZoom(ChartBackground* background, float zoom);
 
 #endif // CHARTBACKGROUNND_H_INCLUDED

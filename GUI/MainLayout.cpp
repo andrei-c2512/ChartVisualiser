@@ -1,6 +1,8 @@
 #include "MainLayout.h"
+#include "Palette.h"
 
-void initMainLayout(MainLayout* layout , Size size0){
+void initMainLayout(MainLayout* layout , Size size0 , const Mouse* mouse ){
+    layout->mouse = mouse;
     int m = 5;
     layout->margin = { m , m , m, m};
 
@@ -16,37 +18,42 @@ void initMainLayout(MainLayout* layout , Size size0){
     layout->redraw = true;
 
     //if you want to change the aspect ratio
-    layout->chartStretch = 3;
+    layout->chartStretch = 2;
     layout->functionViewStretch = 1;
+
 
     const int totalSegments = layout->chartStretch + layout->functionViewStretch;
     const Size chartSize = horizontalSizeByStretchFactor(layout->s , totalSegments , layout->chartStretch);
     const Size functionViewSize = horizontalSizeByStretchFactor(layout->s , totalSegments , layout->functionViewStretch);
 
-    //TO DO : initFunctionView
-    initChartView(layout->chartView , layout->x + functionViewSize.width , layout->y  , chartSize);
+    initFunctionView(layout->functionView, 
+        sf::Vector2i(layout->x, layout->y), 
+        sf::Vector2i(functionViewSize.width, functionViewSize.height));
+
+    initChartView(layout->chartView , layout->x + functionViewSize.width , layout->y  , chartSize , mouse);
 }
 
-void runMainLayout(MainLayout* layout){
+void runMainLayout(MainLayout* layout, const Mouse& mouse , const Keyboard& kb){
     runChartView(layout->chartView);
-    //TO DO: run functionView
-
-
-    if(layout->redraw)
-    {
-        drawMainLayout(layout);
-        layout->redraw = false;
-    }
+    runFunctionView(layout->functionView , mouse , kb);
 }
 
-void drawMainLayout(MainLayout* layout){
-    setfillstyle(SOLID_FILL , BACKGROUND_MAIN);
-    bar(layout->x ,
-        layout->y ,
-        layout->x + layout->s.width ,
-        layout->y + layout->s.height);
+void drawMainLayout(sf::RenderWindow& window, MainLayout* layout){
+    if (layout->redraw)
+    {
+        sf::RectangleShape rect;
+        
+        rect.setFillColor(Palette::mainBackgroundColor());
+        rect.setPosition(layout->x, layout->y);
+        rect.setSize(sf::Vector2f(layout->s.width, layout->s.height));
 
-    drawChartView(layout->chartView);
+        window.draw(std::move(rect));
+
+        drawFunctionView(window, layout->functionView);
+        drawChartView(window, layout->chartView);
+
+        //layout->redraw = false;
+    }
 }
 
 void destroyMainLayout(MainLayout* layout){

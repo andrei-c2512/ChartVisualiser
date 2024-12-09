@@ -9,7 +9,7 @@ Size adjustSizeToMargins(const Size& s , const Margins& margin){
 Size horizontalSizeByStretchFactor(const Size& totalSize , int segments , int stretch){
     const float segmentW = totalSize.width / segments;
 
-    return { segmentW * stretch , totalSize.height};
+    return { int(segmentW * float(stretch)) , totalSize.height};
 }
 
 bool intersection(const Rect& rect1 , const Rect& rect2){
@@ -23,5 +23,31 @@ void logSize(Size s){
     std::cout << "Width: " << s.width << " Height: " << s.height;
 }
 
+char* intToString(int nr) {
+	int cpy = nr;
+	bool negative = nr < 0;
+	int digits = negative;
 
+	while (cpy) {
+		digits++;
+		cpy /= 10;
+	}
+
+	char* strNum = new char[digits + 1];
+	strNum[digits] = NULL;
+
+	if (negative)
+	{
+		strNum[0] = '-';
+		nr = -nr;
+	}
+	while (nr) {
+		digits--;
+		strNum[digits] = char(nr % 10 + 48);
+		nr /= 10;
+	}
+
+	//std::cout << "number" << std::endl;
+	return strNum;
+}
 
