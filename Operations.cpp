@@ -9,7 +9,7 @@ bool DifInf(float x)
 {
     return fabs(infinit-fabs(x)) > infinit / 2.0;
 };
-float Logaritm(float x)
+float Logarithm(float x)
 {
     if (x>epsi && DifInf(x))
         return log(x);
@@ -23,38 +23,38 @@ float Exponential(float x)
     else return infinit;
 };
 
-float Inmultit(float x, float y)
+float Multiply(float x, float y)
 {
-    if (fabs(x < epsi) || fabs(y) < epsi) return 0;
+    if (fabs(x) < epsi || fabs(y) < epsi) return 0;
         else if (DifInf(x) && DifInf(y)) return x*y;
             else return infinit;
             }
 
-float Putere(float x, float y)
+float Power(float x, float y)
 {
     float p;
     if (x==0) return 0;
-    else if (y=0) return 1;
+    else if (y==0) return 1;
     else if (x==infinit || y==infinit) return infinit;
     else
         return pow(x,y);
 }
-float Egal(float x, float y)
+float Equal(float x, float y)
 {
     return x==y;
 }
 
-float Diferit(float x, float y)
+float Different(float x, float y)
 {
     return x!=y;
 }
 
-float MaiMic(float x, float y)
+float Smaller(float x, float y)
 {
     return x < y;
 }
 
-float MaiMare(float x, float y)
+float Bigger(float x, float y)
 {
     return x > y;
 }
@@ -65,13 +65,13 @@ float Plus(float x, float y)
     else return infinit;
 }
 
-float Minus(float x, float y)
+float Substract(float x, float y)
 {
     if (DifInf(x) && DifInf(y))  return x-y;
     else return infinit;
 }
 
-float Impartit(float x, float y)
+float Divide(float x, float y)
 {
     if (fabs(y)>epsi) return x/y;
     else return infinit;
@@ -89,7 +89,7 @@ float Cosinus(float x)
     else return infinit;
 };
 
-float Modul(float x)
+float Absolute(float x)
 {
     if (DifInf(x))  return fabs(x);
     else return infinit;
@@ -100,3 +100,4 @@ float Radical(float x)
     if (DifInf(x) && (x>epsi)) return sqrt(x);
     else return infinit;
 };
+

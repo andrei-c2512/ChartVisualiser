@@ -1,4 +1,6 @@
 # depslib dependency file v1.0
+19988480 <<<<< Updated upstream
+
 1732965999 source:c:\users\andrei c\documents\graficfunctii\functionprocessor.cpp
 	"FunctionProcessor.h"
 
@@ -59,4 +61,76 @@
 
 1732995487 source:c:\users\andrei c\documents\graficfunctii\gui\guicommon.cpp
 	"GUICommon.h"
+
+1732995487 .h"
+
+1733452838 source:c:\users\alex\desktop\function\chartvisualiser\functionprocessor.cpp
+	"FunctionProcessor.h"
+	<bits/stdc++.h>
+	"Operations.h"
+
+1733452448 source:c:\users\alex\desktop\function\chartvisualiser\main.cpp
+	<bits/stdc++.h>
+	"FunctionProcessor.h"
+
+1733452334 c:\users\alex\desktop\function\chartvisualiser\functionprocessor.h
+
+1733205042 c:\users\alex\desktop\function\chartvisualiser\operations.h
+
+1733205263 source:c:\users\alex\desktop\function\chartvisualiser\operations.cpp
+	<limits.h>
+	<cmath>
+	"Operations.h"
+
+1733049857 shed changes
+
+1733121709 source:c:\users\alex\desktop\function\chartvisualiser\gui\chart.cpp
+	"Chart.h"
+
+1733121709 c:\users\alex\desktop\function\chartvisualiser\gui\chart.h
+	"GUICommon.h"
+	"graphics.h"
+
+1733121709 c:\users\alex\desktop\function\chartvisualiser\gui\guicommon.h
+	<iostream>
+
+1733121709 source:c:\users\alex\desktop\function\chartvisualiser\gui\chartbackground.cpp
+	"ChartBackgrounnd.h"
+
+1733121709 c:\users\alex\desktop\function\chartvisualiser\gui\chartbackgrounnd.h
+	"GUICommon.h"
+	"graphics.h"
+	"Palette.h"
+
+1733121709 c:\users\alex\desktop\function\chartvisualiser\gui\palette.h
+	"graphics.h"
+
+1733121709 source:c:\users\alex\desktop\function\chartvisualiser\gui\chartview.cpp
+	"ChartView.h"
+
+1733121709 c:\users\alex\desktop\function\chartvisualiser\gui\chartview.h
+	"ChartBackgrounnd.h"
+	"Chart.h"
+	"GUICommon.h"
+	<conio.h>
+
+1733121709 source:c:\users\alex\desktop\function\chartvisualiser\gui\guicommon.cpp
+	"GUICommon.h"
+
+1733121709 source:c:\users\alex\desktop\function\chartvisualiser\gui\mainlayout.cpp
+	"MainLayout.h"
+
+1733121709 c:\users\alex\desktop\function\chartvisualiser\gui\mainlayout.h
+	"FunctionView.h"
+	"ChartView.h"
+
+1733121709 c:\users\alex\desktop\function\chartvisualiser\gui\functionview.h
+	"Layout.h"
+
+1733121709 c:\users\alex\desktop\function\chartvisualiser\gui\layout.h
+	"View.h"
+
+1733121709 c:\users\alex\desktop\function\chartvisualiser\gui\view.h
+	"GUICommon.h"
+	"Palette.h"
 
