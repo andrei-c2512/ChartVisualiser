@@ -8,7 +8,22 @@ char keyToChar(sf::Keyboard::Key key, bool shift) {
     }
 
     if (key >= sf::Keyboard::Num0 && key <= sf::Keyboard::Num9) {
-        return char(key - sf::Keyboard::Num0 + '0'); 
+        if (shift) {
+            switch (key) {
+            case sf::Keyboard::Num1: return '!';
+            case sf::Keyboard::Num2: return '@';
+            case sf::Keyboard::Num3: return '#';
+            case sf::Keyboard::Num4: return '$';
+            case sf::Keyboard::Num5: return '%';
+            case sf::Keyboard::Num6: return '^';
+            case sf::Keyboard::Num7: return '&';
+            case sf::Keyboard::Num8: return '*';
+            case sf::Keyboard::Num9: return '(';
+            case sf::Keyboard::Num0: return ')';
+            }
+        }
+        else
+            return char(key - sf::Keyboard::Num0 + '0'); 
     }
 
     if (key >= sf::Keyboard::Numpad0 && key <= sf::Keyboard::Numpad9) {
@@ -37,8 +52,6 @@ void updateKeyboard(Keyboard& kb, sf::Event ev , bool shift) {
         kb.keyPressed = true;
         kb.lastKey = keyToChar(ev.key.code, shift);
         kb.samePoll = true;
-
-        std::cout << "CACA" << std::endl;
     }
     else if(!kb.samePoll)
         kb.keyPressed = false;

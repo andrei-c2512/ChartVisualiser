@@ -5,13 +5,14 @@
 #include "TextEdit.h"
 #include "FunctionManagerPage.h"
 #include "GUICommon.h"
-
+#include "HelpPage.h"
 
 struct StackedView{
     sf::Vector2i pos;
     sf::Vector2i size;
 
     FunctionManagerPage functionPage;
+    HelpPage helpPage;
     Options option;
 };
 

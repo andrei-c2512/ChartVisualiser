@@ -6,6 +6,7 @@ struct Keyboard {
 	bool keyPressed = false;
 
 	bool samePoll = false;
+	mutable bool usedKey = false;
 	sf::Clock clock;
 };
 

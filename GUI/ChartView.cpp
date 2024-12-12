@@ -24,35 +24,44 @@ void initChartView(ChartView* view , int x0 , int y0  ,Size size0 , const Mouse*
         y0 + view->margin.top + view->borderWidth,
         { view->s.width - view->borderWidth ,
         view->s.height - view->borderWidth });
+
+
+
+
+    view->boundLeft = -20 * CHART_UNIT_SIZE;
+    view->boundRight = 20 * CHART_UNIT_SIZE;
 }
-void runChartView(ChartView* view){
+void runChartView(ChartView* view , const Mouse& mouse, const Keyboard& kb){
     const float zoomIncrease = 1.05f;
     const float zoomDecrease = 0.95f;
-    if(_kbhit()){
-        char ch = _getch();
+
+    if (kb.samePoll && !kb.usedKey) {
+        char ch = kb.lastKey;
         int moveFactor = 5;
-        switch(ch){
+        switch (ch) {
         case 'a':
-            moveChartX(view , -moveFactor);
+            moveChartX(view, -moveFactor);
             break;
         case 'd':
-            moveChartX(view , moveFactor);
+            moveChartX(view, moveFactor);
             break;
         case 'w':
-            moveChartY(view , -moveFactor);
+            moveChartY(view, -moveFactor);
             break;
         case 's':
-            moveChartY(view , moveFactor);
+            moveChartY(view, moveFactor);
             break;
         case '+':
-            setChartBackgroundZoom(view->background , view->background->zoom * zoomIncrease);
-            setChartZoom(view->chart , view->chart->zoom * zoomIncrease);
+            setChartBackgroundZoom(view->background, view->background->zoom * zoomIncrease);
+            setChartZoom(view->chart, view->chart->zoom * zoomIncrease);
             view->redraw = true;
             break;
         case '-':
-            setChartBackgroundZoom(view->background , view->background->zoom * zoomDecrease);
-            setChartZoom(view->chart , view->chart->zoom * zoomDecrease);
+            setChartBackgroundZoom(view->background, view->background->zoom * zoomDecrease);
+            setChartZoom(view->chart, view->chart->zoom * zoomDecrease);
             view->redraw = true;
+            break;
+        default:
             break;
         }
     }
@@ -89,13 +98,22 @@ void drawChartView(sf::RenderWindow& window, ChartView* view){
     }
 }
 
+bool cameraInBoundsX(ChartView* view, int32_t x) {
+    return x <= view->boundRight && x >= view->boundLeft;
+}
+bool cameraInBoundsY(ChartView* view, int32_t y) {
+    return y <= view->boundBottom && y >= view->boundTop;
+}
+
 //delta x
 void moveChartX(ChartView* view, int dx){
-    view->background->offsetX += dx;
-    view->chart->offsetX += dx;
-
-    if(dx)
-    view->redraw = true;
+    if (cameraInBoundsX(view, view->background->offsetX + dx))
+    {
+        view->background->offsetX += dx;
+        view->chart->offsetX += dx;
+        if (dx)
+            view->redraw = true;
+    }
 }
 //delta y
 void moveChartY(ChartView* view, int dy){

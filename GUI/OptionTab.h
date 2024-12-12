@@ -10,6 +10,8 @@ struct OptionTab {
 	std::vector<Button*> optionList;
 
 	int32_t lastSelected = 0;
+
+	Options currentOption = Options::FunctionList;
 };
 
 void initOptionTab(OptionTab* tab , sf::Vector2i pos , sf::Vector2i size);

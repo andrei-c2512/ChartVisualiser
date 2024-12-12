@@ -4,7 +4,7 @@
 #include "Mouse.h"
 #include "Palette.h"
 #include <array>
-
+#include <functional>
 
 
 struct IconDrawer {
@@ -28,6 +28,10 @@ struct Button{
     bool selected = false;
 
     IconDrawer* iconDrawer = nullptr;
+
+    bool drawCircle = false;
+
+    std::function<void()> onClick;
 };
 
 
@@ -35,6 +39,7 @@ void setButtonIcon(Button* button, std::string imagePath);
 void initButton(Button* button , sf::Vector2i pos, sf::Vector2i size,  const std::array<ViewPalette , 4>& palette);
 bool runButton(Button* button , const Mouse& mouse);
 void drawButton(sf::RenderWindow& window, Button* button);
+void setOnClick(Button* btn , std::function<void()> func);
 void destroyButton(Button* button);
 
 #endif // BUTTON_H_INCLUDED

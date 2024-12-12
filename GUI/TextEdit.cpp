@@ -3,6 +3,8 @@
 #include <conio.h>
 #include <iostream>
 #include <assert.h>
+#include "SFHelper.h"
+
 
 
 void initTextEdit(TextEdit* edit, sf::Vector2i pos, sf::Vector2i size) {
@@ -15,13 +17,15 @@ void initTextEdit(TextEdit* edit, sf::Vector2i pos, sf::Vector2i size) {
 void runTextEdit(TextEdit* edit, const Mouse& mouse ,const Keyboard& kb) {
 
 	float f = kb.clock.getElapsedTime().asSeconds();
-	if (edit->selected && kb.keyPressed && kb.samePoll) {
-		if (kb.lastKey != '`')
+	if (edit->selected && kb.keyPressed && kb.samePoll && !kb.usedKey) {
+		if (kb.lastKey != '`') {
 			edit->text += kb.lastKey;
-		else
+			kb.usedKey = true;
+		}
+		else {
+			if(edit->text.empty() == false)
 			edit->text.pop_back();
-
-		std::cout << edit->text << std::endl;
+		}
 	}
 
 	sf::Vector2i mousePos = mouse.windowPos;
@@ -32,6 +36,7 @@ void runTextEdit(TextEdit* edit, const Mouse& mouse ,const Keyboard& kb) {
 	if (rect.contains(mousePos)) {
 		edit->selected = true;
 		edit->clock = new sf::Clock;
+		edit->drawCursor = true;
 	}
 	else {
 		edit->selected = false;
@@ -87,7 +92,7 @@ void drawTextEdit(sf::RenderWindow& window, TextEdit* edit){
 		}
 		else {
 			int before = mid;
-			while (edit->text[mid] != ' ') {
+			while (edit->text[mid] != ' ' && mid >= 0) {
 				mid--;
 			}
 			if (mid <= lastIt)
@@ -104,6 +109,12 @@ void drawTextEdit(sf::RenderWindow& window, TextEdit* edit){
 		lastIt = mid + 1;
 		assert(height < 200);
 	}
+	edit->size.y = std::max(20, height); 
+	const int sublineSpacing = 3;
+	SFHelper::line(window , edit->pos.x, 
+		edit->pos.y + edit->size.y + sublineSpacing, 
+		edit->pos.x + edit->size.x, 
+		edit->pos.y + edit->size.y + sublineSpacing, sf::Color::Black);
 
 	height -= 20;
 	if (edit->clock && edit->clock->getElapsedTime().asSeconds() > 0.5f) {
@@ -118,7 +129,6 @@ void drawTextEdit(sf::RenderWindow& window, TextEdit* edit){
 		drawable.setSize(sf::Vector2f(1, rect.height));
 		drawable.setFillColor(sf::Color(0, 0, 0));
 		window.draw(drawable);
-		
 	}
 }
 void destroyTextEdit(TextEdit* edit) {

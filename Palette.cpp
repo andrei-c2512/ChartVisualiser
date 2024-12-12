@@ -46,10 +46,10 @@ const sf::Font& Palette::font() {
 
 std::array<ViewPalette, 4> Palette::optionButtonPalette() {
 	std::array<ViewPalette, 4> pal;
-	pal[0] = { sf::Color(44, 54, 63), optionTabBackground() , sf::Color(100 , 100 , 100)};
-	pal[1] = { sf::Color(255, 187, 92) , sf::Color(112, 136, 255) , sf::Color(100 , 100 , 100)};
-	pal[2] = { sf::Color(255, 159, 28) , sf::Color(112, 136, 255) , sf::Color(100 , 100 , 100) };
-	pal[3] = { sf::Color(255, 159, 28) , sf::Color(112, 136, 255) , sf::Color(100 , 100 , 100) };
+	pal[0] = { sf::Color(44, 54, 63), optionTabBackground() , optionTabBackground() };
+	pal[1] = { sf::Color(255, 187, 92) , sf::Color(112, 136, 255) , sf::Color(112, 136, 255)};
+	pal[2] = { sf::Color(255, 159, 28) , sf::Color(112, 136, 255) , sf::Color(112, 136, 255) };
+	pal[3] = { sf::Color(255, 159, 28) , sf::Color(112, 136, 255) , sf::Color(112, 136, 255) };
 
 	return pal;
 }
@@ -67,19 +67,29 @@ sf::Color Palette::optionTabMarginColor() {
 
 std::array<ViewPalette, 4> Palette::loadFileButtonPalette() {
 	std::array<ViewPalette, 4> pal;
-	pal[0] = { sf::Color(44, 54, 63), optionTabBackground() , sf::Color(100 , 100 , 100) };
-	pal[1] = { sf::Color(255, 187, 92) , sf::Color(112, 136, 255) , sf::Color(100 , 100 , 100) };
-	pal[2] = { sf::Color(255, 159, 28) , sf::Color(112, 136, 255) , sf::Color(100 , 100 , 100) };
-	pal[3] = { sf::Color(255, 159, 28) , sf::Color(112, 136, 255) , sf::Color(100 , 100 , 100) };
+	pal[0] = { optionTabBackground()   , sf::Color::Transparent , optionTabBackground() };
+	pal[1] = { sf::Color(255, 187, 92) , sf::Color::Transparent , sf::Color(255, 187, 92) };
+	pal[2] = { sf::Color(255, 159, 28) , sf::Color::Transparent , sf::Color(255, 159, 28) };
+	pal[3] = { sf::Color(255, 159, 28) , sf::Color::Transparent , sf::Color(255, 159, 28) };
 
 	return pal;
 }
 std::array<ViewPalette, 4> Palette::deleteButtonPalette() {
 	std::array<ViewPalette, 4> pal;
-	pal[0] = { sf::Color(44, 54, 63), sf::Color(254, 74, 73) , sf::Color(100 , 100 , 100)};
-	pal[1] = { sf::Color(255, 187, 92) , sf::Color(254, 74, 73) , sf::Color(100 , 100 , 100) };
-	pal[2] = { sf::Color(255, 159, 28) , sf::Color(254, 74, 73) , sf::Color(100 , 100 , 100) };
-	pal[3] = { sf::Color(255, 159, 28) , sf::Color(254, 74, 73) , sf::Color(100 , 100 , 100) };
+	pal[0] = { sf::Color(254, 74, 73)  , sf::Color::Transparent , sf::Color(254, 74, 73)  };
+	pal[1] = { sf::Color(255, 187, 92) , sf::Color::Transparent , sf::Color(255, 187, 92) };
+	pal[2] = { sf::Color(255, 159, 28) , sf::Color::Transparent , sf::Color(255, 159, 28) };
+	pal[3] = { sf::Color(255, 159, 28) , sf::Color::Transparent , sf::Color(255, 159, 28) };
+
+	return pal;
+}
+
+std::array<ViewPalette, 4> Palette::addButtonPalette() {
+	std::array<ViewPalette, 4> pal;
+	pal[0] = { sf::Color(44, 54, 63), sf::Color::Transparent , sf::Color::Transparent };
+	pal[1] = { sf::Color(255, 187, 92) , sf::Color::Transparent , sf::Color::Transparent };
+	pal[2] = { sf::Color(255, 159, 28) , sf::Color::Transparent , sf::Color::Transparent };
+	pal[3] = { sf::Color(255, 159, 28) , sf::Color::Transparent , sf::Color::Transparent };
 
 	return pal;
 }

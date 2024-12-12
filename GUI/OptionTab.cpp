@@ -24,11 +24,11 @@ void initOptionTab(OptionTab* tab, sf::Vector2i pos, sf::Vector2i size) {
 	tab->backgroundColor = Palette::optionTabBackground();
 
 	setButtonIcon(list[Options::FunctionList], "GUI/Resources/functionIcon64x60.png");
-	setButtonIcon(list[Options::Analysis], "GUI/Resources/analysisIcon64x64.png");
-	setButtonIcon(list[Options::Integral], "GUI/Resources/integralIcon64x64.png");
+	setButtonIcon(list[Options::Analysis]    , "GUI/Resources/analysisIcon64x64.png");
+	setButtonIcon(list[Options::Integral]    , "GUI/Resources/integralIcon64x64.png");
 
-	list[Options::About]->pos.y = pos.y + size.y - baseHeight;
-	setButtonIcon(list[Options::About], "GUI/Resources/questionMarkIcon64x64.png");
+	list[Options::Help]->pos.y = pos.y + size.y - baseHeight;
+	setButtonIcon(list[Options::Help]        , "GUI/Resources/questionMarkIcon64x64.png");
 }
 
 
@@ -43,6 +43,7 @@ void runOptionTab(OptionTab* tab, const Mouse& mouse) {
 				tab->optionList[tab->lastSelected]->selected = false;
 				tab->lastSelected = i;
 			}
+			tab->currentOption = Options(i);
 		}
 	}
 }

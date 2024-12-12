@@ -33,13 +33,11 @@ enum ViewState{
     COUNT
 };
 
-
-
 enum Options {
     FunctionList,
     Analysis,
     Integral,
-    About,
+    Help,
     Count
 };
 

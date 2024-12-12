@@ -21,6 +21,8 @@ void initFunctionView(FunctionView* view, sf::Vector2i pos, sf::Vector2i size) {
 		sf::Vector2i(pos.x + tabWidth + view->rightMargin, pos.y), sf::Vector2i(contentWidth, size.y));
 }
 void runFunctionView(FunctionView* view, const Mouse& mouse ,const Keyboard& kb) {
+	view->stackedView->option = view->optionTab->currentOption;
+
 	runOptionTab(view->optionTab, mouse);
 	runStackedView(view->stackedView, mouse, kb);
 }

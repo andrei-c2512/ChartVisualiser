@@ -31,6 +31,7 @@ namespace Palette {
     std::array<ViewPalette, 4> optionButtonPalette();
     std::array<ViewPalette, 4> loadFileButtonPalette();
     std::array<ViewPalette, 4> deleteButtonPalette();
+    std::array<ViewPalette, 4> addButtonPalette();
 }
 
 

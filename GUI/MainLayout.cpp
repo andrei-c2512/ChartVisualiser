@@ -34,8 +34,8 @@ void initMainLayout(MainLayout* layout , Size size0 , const Mouse* mouse ){
 }
 
 void runMainLayout(MainLayout* layout, const Mouse& mouse , const Keyboard& kb){
-    runChartView(layout->chartView);
-    runFunctionView(layout->functionView , mouse , kb);
+    runFunctionView(layout->functionView, mouse, kb);
+    runChartView(layout->chartView , mouse , kb);
 }
 
 void drawMainLayout(sf::RenderWindow& window, MainLayout* layout){

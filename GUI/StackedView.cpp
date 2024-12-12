@@ -7,8 +7,10 @@ void initStackedView(StackedView* stackedView, sf::Vector2i pos, sf::Vector2i si
 	stackedView->option = Options::FunctionList;
 
 	initFunctionManagerPage(&stackedView->functionPage, pos, size);
+	initHelpPage(&stackedView->helpPage, pos, size);
 }
 void runStackedView(StackedView* stackedView , const Mouse& mouse, const Keyboard& kb) {
+
 	switch (stackedView->option) {
 	case Options::FunctionList:
 		runFunctionManagerPage(&stackedView->functionPage , mouse , kb);
@@ -17,7 +19,7 @@ void runStackedView(StackedView* stackedView , const Mouse& mouse, const Keyboar
 		break;
 	case Options::Integral:
 		break;
-	case Options::About:
+	case Options::Help:
 		break;
 	default:
 		break;
@@ -32,7 +34,8 @@ void drawStackedView(sf::RenderWindow& window, StackedView* stackedView) {
 		break;
 	case Options::Integral:
 		break;
-	case Options::About:
+	case Options::Help:
+		drawHelpPage(window, &stackedView->helpPage);
 		break;
 	default:
 		break;

@@ -7,6 +7,10 @@ enum StatusCode{
     INCORECCT_PARANTHESES,
     UNKOWN
 };
+
+
+"x + 10 + sin(x)"
+
 bool isOperation(char* s);
 char* extractFunctionFromFile();
 void calculate(char* s,float x);

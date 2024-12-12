@@ -43,6 +43,7 @@ void initButton(Button* button , sf::Vector2i pos0 , sf::Vector2i size0 , const 
 	button->pos = pos0;
 	button->size = size0;
 	button->paletteList = palette;
+	button->onClick = []() {};
 }
 bool runButton(Button* button , const Mouse& mouse){
 	const sf::Vector2i& mousePos = mouse.windowPos;
@@ -53,6 +54,7 @@ bool runButton(Button* button , const Mouse& mouse){
 		if (mouse.current == sf::Event::MouseButtonPressed)
 		{
 			button->state = ViewState::PRESSED;
+			button->onClick();
 			return true;
 		}
 		else
@@ -74,14 +76,7 @@ void drawButton(sf::RenderWindow& window , Button* button){
 	if (button->state == ViewState::SELECTED)
 		int i = 0;
 	const ViewPalette& p = button->paletteList[int(button->state)];
-	
-	sf::RectangleShape rect;
-	rect.setFillColor(p.backgroundColor);
-	rect.setOutlineColor(p.borderColor);
-	rect.setSize(SFHelper::toVec2f(button->size));
-	rect.setPosition(SFHelper::toVec2f(button->pos));
 
-	window.draw(rect);
 
 	if (button->text.empty() == false) {
 		sf::Text text;
@@ -91,6 +86,27 @@ void drawButton(sf::RenderWindow& window , Button* button){
 		text.setPosition(SFHelper::toVec2f(button->pos));
 	}
 	
+	if (button->drawCircle) {
+		sf::CircleShape shape;
+		shape.setPosition(SFHelper::toVec2f(button->pos));
+		shape.setOutlineColor(p.borderColor);
+		shape.setFillColor(p.backgroundColor);
+		shape.setRadius(button->size.x / 2);
+		shape.setOutlineThickness(3);
+
+		window.draw(shape);
+	}
+	else
+	{
+		sf::RectangleShape rect;
+		rect.setFillColor(p.backgroundColor);
+		rect.setOutlineColor(p.borderColor);
+		rect.setSize(SFHelper::toVec2f(button->size));
+		rect.setPosition(SFHelper::toVec2f(button->pos));
+		rect.setOutlineThickness(3);
+		window.draw(rect);
+	}
+
 	if (button->iconDrawer) {
 		drawIcon(button->iconDrawer, window, button->pos , button->size , p.textColor);
 	}
@@ -106,4 +122,8 @@ void destroyButton(Button* button) {
 	if (button->iconDrawer) {
 		delete button->iconDrawer;
 	}
+}
+
+void setOnClick(Button* btn , std::function<void()> func) {
+	btn->onClick = func;
 }
