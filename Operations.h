@@ -1,22 +1,22 @@
 #ifndef OPERATIONS_H_INCLUDED
 #define OPERATIONS_H_INCLUDED
 
-bool DifInf(float x);
-float Logarithm(float x);
-float Exponential(float x);
-float Multiply(float x, float y);
-float Power(float x, float y);
-float Equal(float x, float y);
-float Different(float x, float y);
-float Smaller(float x, float y);
-float Bigger(float x, float y);
-float Plus(float x, float y);
-float Substract(float x, float y);
-float Divide(float x, float y);
-float Sinus(float x);
-float Cosinus(float x);
-float Absolute(float x);
-float Radical(float x);
+bool DifInf(double x);
+double Logarithm(double x);
+double Exponential(double x);
+double Multiply(double x, double y);
+double Power(double x, double y);
+double Equal(double x, double y);
+double Different(double x, double y);
+double Smaller(double x, double y);
+double Bigger(double x, double y);
+double Plus(double x, double y);
+double Substract(double x, double y);
+double Divide(double x, double y);
+double Sinus(double x);
+double Cosinus(double x);
+double Absolute(double x);
+double Radical(double x);
 
 #endif // OPERATIONS_H_INCLUDED
 
