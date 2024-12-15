@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\GUI">
+      <UniqueIdentifier>{d6c2422b-93c5-40a4-aad3-95a42d0be2a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\GUI">
+      <UniqueIdentifier>{68ba96ad-22f2-430e-b880-13edbd96497d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI\Pages">
+      <UniqueIdentifier>{0e42abcb-77d8-43d3-982b-aff8e958d878}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI\Pages">
+      <UniqueIdentifier>{991ab5d6-80c3-400d-9811-4759bec351bd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GUI\Button.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\Chart.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\ChartBackground.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\ChartView.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\GUICommon.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\MainLayout.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\Mouse.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionProcessor.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Operations.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Palette.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\OptionTab.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\FunctionView.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\SFHelper.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\TextEdit.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\FunctionManagerPage.cpp">
+      <Filter>Source\GUI\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\StackedView.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\Keyboard.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GUI\Mouse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\StackedView.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\Button.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\Chart.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\ChartBackgrounnd.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\FunctionView.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\ChartView.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\GUICommon.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\View.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\MainLayout.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\Palette.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\OptionTab.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\SFHelper.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\TextEdit.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\FunctionManagerPage.h">
+      <Filter>Header Files\GUI\Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\Keyboard.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

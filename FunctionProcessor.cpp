@@ -16,6 +16,7 @@ ofstream fout("date.out");
 const char BinaryOperations[] = "+-*/^<>=#";
 const char UnaryOperations[] = "scrael";
 stack<char> operators;
+
 stack<double> operands;
 
 int priority(char c)
@@ -229,8 +230,6 @@ double calculateFunction(string s,double x)
         if(isnan(operands.top()))
                     return numeric_limits<double>::quiet_NaN();
     }
-    return operands.top();
-}
 
 void initFuncManager(string& manager){
     negativeNumbers(manager);
