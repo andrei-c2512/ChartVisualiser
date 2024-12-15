@@ -1,6 +1,12 @@
 #include "FunctionProcessor.h"
-#include <bits/stdc++.h>
+#include <string>
+#include <stack>
+#include <fstream>
+#include <cstring>
 #include "Operations.h"
+#include <limits>
+#include <cmath>
+
 
 using namespace std;
 
@@ -10,30 +16,8 @@ ofstream fout("date.out");
 const char BinaryOperations[] = "+-*/^<>=#";
 const char UnaryOperations[] = "scrael";
 stack<char> operators;
-stack<float> operands;
-bool isValidParenthesis(char* s)
-{
-    stack<char>p;
-    p.push('(');
-    for(int i=0; i<strlen(s); i++)
-        if(s[i]=='(')
-            p.push('(');
-        else if(s[i]==')')
-        {
-            if(!p.empty())
-                p.pop();
-            else
-                return false;
-        }
-    if(p.empty())
-        return true;
-    else
-        return false;
-}
-bool isOperation(char* s)
-{
-    return  isValidParenthesis(s);//*isValidNumber(s)*isValidBinaryOperation(s)*isValidUnaryOperation(s);
-}
+stack<double> operands;
+
 int priority(char c)
 {
     if(strchr("()",c)!=0)
@@ -50,44 +34,32 @@ int priority(char c)
         return 5;
     return -1 ;
 }
-void negativeNumbers(char* s)
+void negativeNumbers(string &s)
 {
-    for(int i=0; i<strlen(s); i++)
+    for(int i=0; i<s.length(); i++)
         if(s[i]=='-')
         {
-            char* t = new char[101];
-            if(i==0)
+            if(!isdigit(s[i-1]) && s[i-1]!='x')
             {
-                strcpy(t,s+i);
-                strcpy(s+i+1,t);
-                s[i]='0';
+                s.insert(i,"0");
                 i++;
             }
-            else if(!isdigit(s[i-1]) && s[i-1]!='x')
-            {
-                strcpy(t,s+i);
-                strcpy(s+i+1,t);
-                s[i]='0';
-                i++;
-            }
-            delete[] t;
         }
 }
 
-char* extractFunctionFromFile()
+string extractFunctionFromFile()
 {
-    char* s = new char[101];
-    fin.getline(s,100);
-    int n=strlen(s);
-    strcpy(s+n,")");
-    operators.push('(');
+    string s;
+    getline(fin,s);
+    s.insert(0,"(");
+    s=s+")";
     return s;
 }
-float number(char* s)
+double number(string s)
 {
-    int n=strlen(s),i=0;
-    float nr=0;
-    while(isdigit(s[i]) && i<n)
+    int i=0;
+    double nr=0;
+    while(isdigit(s[i]) && i<s.length())
     {
         nr=nr*10+(s[i]-'0');
         i++;
@@ -95,8 +67,8 @@ float number(char* s)
     if(s[i]=='.' || s[i]==',')
     {
         i++;
-        float p=0.1;
-        while(isdigit(s[i]) && i<n)
+        double p=0.1;
+        while(isdigit(s[i]) && i<s.length())
         {
             nr=nr+(s[i]-'0')*p;
             p*=0.1;
@@ -106,32 +78,31 @@ float number(char* s)
     i--;
     return nr;
 }
-void extractTokens(char* s)
+void extractTokens(string &s)
 {
-    char t[100]="";
-    int j=0;
-    for(int i=0; i<strlen(s); i++)
+    string t;
+    for(int i=0; i<s.length(); i++)
     {
         bool isUnaryOperation = (strchr(UnaryOperations,s[i]) != 0);
 
         if(isdigit(s[i]))
         {
-            while((isdigit(s[i]) || s[i]=='.') && i<strlen(s))
-                t[j++]=s[i++];
+            while((isdigit(s[i]) || s[i]=='.') && i<s.length())
+                t += s[i++];
             i--;
         }
         else
         {
-            t[j++]=s[i];
+            t += s[i];
             if(isUnaryOperation)
                 if(s[i]=='l')
-                    t[j++]=s[++i];
+                    t += s[++i];
                 else
-                    t[j++]=s[++i],t[j++]=s[++i];
+                    t += s[++i],t += s[++i];
         }
-        t[j++]=' ';
+        t += " ";
     }
-    strcpy(s,t);
+    s = t;
 }
 void apllyOperation()
 {
@@ -142,9 +113,9 @@ void apllyOperation()
 
     if(isBinaryOperation)
     {
-        float a=operands.top();
+        double a=operands.top();
         operands.pop();
-        float b=operands.top();
+        double b=operands.top();
         operands.pop();
         switch(op)
         {
@@ -179,7 +150,7 @@ void apllyOperation()
     }
     else if(isUnaryOperation)
     {
-        float a=operands.top();
+        double a=operands.top();
         operands.pop();
         switch(op)
         {
@@ -204,12 +175,11 @@ void apllyOperation()
         }
     }
 }
-void calculate(char* t,float x)
+double calculateFunction(string s,double x)
 {
-    char* s= new char[101];
-    strcpy(s,t);
-    char* p=strtok(s," ");
-    while(p)
+    int lastPoz = s.find(" ")+1,firstPoz=0;
+    string p = s.substr(firstPoz,lastPoz);
+    while(lastPoz<s.length())
     {
         bool isX = (tolower(p[0])=='x');
         bool isBinaryOperation = (strchr(BinaryOperations,p[0]) != 0);
@@ -220,7 +190,11 @@ void calculate(char* t,float x)
         if(p[0]==')')
         {
             while(operators.top()!='(')
+            {
                 apllyOperation();
+                if(isnan(operands.top()))
+                    return numeric_limits<double>::quiet_NaN();
+            }
             operators.pop();
         }
         if(isX)
@@ -230,7 +204,11 @@ void calculate(char* t,float x)
         if(isBinaryOperation || isUnaryOperation)
         {
             while(priority(operators.top()) >= priority(p[0]))
+            {
                 apllyOperation();
+                if(isnan(operands.top()))
+                    return numeric_limits<double>::quiet_NaN();
+            }
             if(p[0]=='s')
             {
                 if(p[1]=='q')
@@ -241,9 +219,20 @@ void calculate(char* t,float x)
             else
                 operators.push(p[0]);
         }
-        p=strtok(NULL," ");
+        firstPoz = firstPoz+lastPoz;
+        lastPoz = s.find(" ",firstPoz)-firstPoz+1;
+        p = s.substr(firstPoz,lastPoz);
     }
     while(!operators.empty())
+    {
         apllyOperation();
-    fout<<operands.top();
+        if(isnan(operands.top()))
+                    return numeric_limits<double>::quiet_NaN();
+    }
+    return operands.top();
+}
+
+void initFuncManager(string& manager){
+    negativeNumbers(manager);
+    extractTokens(manager);
 }
