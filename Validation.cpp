@@ -2,6 +2,7 @@
 #include<iostream>
 #include <stack>
 #include "FunctionProcessor.h"
+#include "Validation.h"
 using namespace std;
 
 string BinaryOperations = "+-*/^<>=#";
@@ -13,7 +14,7 @@ void noSpaces(string &s)
         if(s[i]==' ')
             s.erase(i,1), i--;
 }
-bool isValidCharacter(string &s)
+StatusCode isValidCharacter(string &s)
 {
     for(int i=0; i<s.length(); i++)
     {
@@ -28,13 +29,13 @@ bool isValidCharacter(string &s)
     }
     if(s=="()")
     {
-        cout << "Not a valid function";
-        return false;
+        ///cout << "Not a valid function";
+        return INVALID_CHARACTER;
     }
-    return true;
+    return OK;
 }
 
-bool isValidParenthesis(string s)
+StatusCode isValidParenthesis(string s)
 {
     noSpaces(s);
     stack<char> p;
@@ -47,8 +48,8 @@ bool isValidParenthesis(string s)
                 p.pop();
             else
             {
-                cout<< "Parentheses are missing or mismatched";
-                return false;
+                ///cout<< "Parentheses are missing or mismatched";
+                return INCORRECT_PARENTHESES;
             }
         }
     if(p.empty())
@@ -57,20 +58,20 @@ bool isValidParenthesis(string s)
         {
             if(s[i]=='(' && s[i+1] == ')')
             {
-                cout << "Empty parenthesis";
-                return false;
+                ///cout << "Empty parenthesis";
+                return EMPTY_PARENTHESES;
             }
         }
-        return true;
+        return OK;
     }
     else
     {
-        cout<< "Parentheses are missing or mismatched";
-        return false;
+        ///cout<< "Parentheses are missing or mismatched";
+        return INCORRECT_PARENTHESES;
     }
 }
 
-bool isNegativeNumber(string &s)
+StatusCode isNegativeNumber(string &s)
 {
     for(int i=0; i<s.length(); i++)
         if(s[i]=='-')
@@ -90,9 +91,9 @@ bool isNegativeNumber(string &s)
                 s.insert(i,")");
             }
         }
-    return true;
+    return OK;
 }
-bool isValidNumber(string &s)
+StatusCode isValidNumber(string &s)
 {
     for(int i=0; i<s.length(); i++)
     {
@@ -124,10 +125,10 @@ bool isValidNumber(string &s)
                 s.insert(j,"*");
         }
     }
-    return true;
+    return OK;
 }
 
-bool isValidUnaryOperation(string s)
+StatusCode isValidUnaryOperation(string s)
 {
     noSpaces(s);
     initFuncManager(s);
@@ -139,8 +140,8 @@ bool isValidUnaryOperation(string s)
         {
             if(UnaryOperations.find(p)==string::npos)
             {
-                cout<<"Syntax error";
-                return false;
+                ///cout<<"Syntax error";
+                return SYNTAX_ERROR;
             }
             else
             {
@@ -149,8 +150,8 @@ bool isValidUnaryOperation(string s)
                 string t = s.substr(firstPoz,lastPoz);
                 if(t!="( ")
                 {
-                    cout<<"Missing parenthesis after "<<p;
-                    return false;
+                    ///cout<<"Missing parenthesis after "<<p;
+                    return MISSING_UNARY_PARENTHESIS;
                 }
             }
         }
@@ -158,10 +159,10 @@ bool isValidUnaryOperation(string s)
         lastPoz = s.find(" ",firstPoz)-firstPoz+1;
         p = s.substr(firstPoz,lastPoz);
     }
-    return true;
+    return OK;
 }
 
-bool isValidBinaryOperation(string &s)
+StatusCode isValidBinaryOperation(string &s)
 {
     noSpaces(s);
     for(int i=0; i<s.length(); i++)
@@ -174,25 +175,25 @@ bool isValidBinaryOperation(string &s)
         }
     if(s=="()")
     {
-        cout << "Not a valid function";
-        return false;
+        ///cout << "Not a valid function";
+        return INVALID_BINARY_OPERATION;
     }
-    return true;
+    return OK;
 }
-bool validate(string &s)
+StatusCode validate(string &s)
 {
-    if(!isValidCharacter(s))
-        return false;
-    if(!isValidParenthesis(s))
-        return false;
-    if(!isNegativeNumber(s))
-        return false;
-    if(!isValidUnaryOperation(s))
-        return false;
-    if(!isValidNumber(s))
-        return false;
-    if(!isValidBinaryOperation(s))
-        return false;
-    cout<<s<<'\n';
-    return true;
+    if(isValidCharacter(s)!=OK)
+        return isValidCharacter(s);
+    if(isValidParenthesis(s)!=OK)
+        return isValidParenthesis(s);
+    if(OK!=isNegativeNumber(s))
+        return isNegativeNumber(s);
+    if(OK!=isValidUnaryOperation(s))
+        return isValidUnaryOperation(s);
+    if(OK!=isValidNumber(s))
+        return isValidNumber(s);
+    if(OK!=isValidBinaryOperation(s))
+        return isValidBinaryOperation(s);
+    ///cout<<s<<'\n';
+    return OK;
 }
