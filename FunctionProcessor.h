@@ -5,14 +5,9 @@
 
 using namespace std;
 
-enum StatusCode{
-    OK,
-    INCORECCT_PARANTHESES,
-    UNKOWN
-};
 bool isOperation(string s);
 string extractFunctionFromFile();
-float calculateFunction(string s,float x);
+double calculateFunction(string s,double x);
 void extractTokens(string &s);
 void negativeNumbers(string &s);
 void initFuncManager(string& manager);

@@ -4,6 +4,9 @@
 #include <fstream>
 #include <cstring>
 #include "Operations.h"
+#include <limits>
+#include <cmath>
+
 
 using namespace std;
 
@@ -13,7 +16,8 @@ ofstream fout("date.out");
 const char BinaryOperations[] = "+-*/^<>=#";
 const char UnaryOperations[] = "scrael";
 stack<char> operators;
-stack<float> operands;
+
+stack<double> operands;
 
 int priority(char c)
 {
@@ -52,10 +56,10 @@ string extractFunctionFromFile()
     s=s+")";
     return s;
 }
-float number(string s)
+double number(string s)
 {
     int i=0;
-    float nr=0;
+    double nr=0;
     while(isdigit(s[i]) && i<s.length())
     {
         nr=nr*10+(s[i]-'0');
@@ -64,7 +68,7 @@ float number(string s)
     if(s[i]=='.' || s[i]==',')
     {
         i++;
-        float p=0.1;
+        double p=0.1;
         while(isdigit(s[i]) && i<s.length())
         {
             nr=nr+(s[i]-'0')*p;
@@ -110,9 +114,9 @@ void apllyOperation()
 
     if(isBinaryOperation)
     {
-        float a=operands.top();
+        double a=operands.top();
         operands.pop();
-        float b=operands.top();
+        double b=operands.top();
         operands.pop();
         switch(op)
         {
@@ -147,7 +151,7 @@ void apllyOperation()
     }
     else if(isUnaryOperation)
     {
-        float a=operands.top();
+        double a=operands.top();
         operands.pop();
         switch(op)
         {
@@ -172,7 +176,7 @@ void apllyOperation()
         }
     }
 }
-float calculateFunction(string s,float x)
+double calculateFunction(string s,double x)
 {
     int lastPoz = s.find(" ")+1,firstPoz=0;
     string p = s.substr(firstPoz,lastPoz);
@@ -187,7 +191,11 @@ float calculateFunction(string s,float x)
         if(p[0]==')')
         {
             while(operators.top()!='(')
+            {
                 apllyOperation();
+                if(isnan(operands.top()))
+                    return numeric_limits<double>::quiet_NaN();
+            }
             operators.pop();
         }
         if(isX)
@@ -197,7 +205,11 @@ float calculateFunction(string s,float x)
         if(isBinaryOperation || isUnaryOperation)
         {
             while(priority(operators.top()) >= priority(p[0]))
+            {
                 apllyOperation();
+                if(isnan(operands.top()))
+                    return numeric_limits<double>::quiet_NaN();
+            }
             if(p[0]=='s')
             {
                 if(p[1]=='q')
@@ -213,9 +225,11 @@ float calculateFunction(string s,float x)
         p = s.substr(firstPoz,lastPoz);
     }
     while(!operators.empty())
+    {
         apllyOperation();
-    return operands.top();
-}
+        if(isnan(operands.top()))
+                    return numeric_limits<double>::quiet_NaN();
+    }
 
 void initFuncManager(string& manager){
     negativeNumbers(manager);

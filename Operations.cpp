@@ -1,4 +1,5 @@
 #include <limits.h>
+#include <limits>
 #include <cmath>
 #include "Operations.h"
 #define infinit INT_MAX
@@ -11,6 +12,8 @@ bool DifInf(double x)
 }
 double Logarithm(double x)
 {
+    if(x<=0)
+        return std::numeric_limits<double>::quiet_NaN();
     if (x>epsi && DifInf(x))
         return log(x);
     else
@@ -73,6 +76,7 @@ double Substract(double x, double y)
 
 double Divide(double x, double y)
 {
+    if(y==0) return std::numeric_limits<double>::quiet_NaN();
     if (fabs(y)>epsi) return x/y;
     return infinit;
 }
@@ -97,6 +101,8 @@ double Absolute(double x)
 
 double Radical(double x)
 {
+    if(x<0)
+        return std::numeric_limits<double>::quiet_NaN();
     if (DifInf(x) && (x>epsi)) return sqrt(x);
     else return infinit;
 }
