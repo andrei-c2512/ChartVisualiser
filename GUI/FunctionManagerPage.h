@@ -2,6 +2,7 @@
 #include "TextEdit.h"
 #include "Button.h"
 #include "GUICommon.h"
+#include "../FunctionProcessor.h"
 
 struct FunctionBox {
 	sf::Vector2i pos;
@@ -9,7 +10,9 @@ struct FunctionBox {
 	Margins margin;
 	TextEdit textEdit;
 	Button deleteBtn;
+	Button randomFunctionBtn;
 	sf::Text formatMessage;
+	sf::Color funcColor;
 
 	int32_t id = 0;
 	static constexpr int32_t buttonVerticalSpacing = 15;
@@ -32,7 +35,7 @@ struct FunctionManagerPage {
 	sf::Vector2i size;
 	Margins margin;
 
-	std::vector<FunctionBox> list;
+	std::vector<FunctionBox*> list;
 
 	Button addButton;
 	Button loadFromFileBtn;
@@ -46,3 +49,5 @@ void initFunctionManagerPage(FunctionManagerPage* page, sf::Vector2i pos, sf::Ve
 void destroyFunctionManagerPage(FunctionManagerPage* page);
 void runFunctionManagerPage(FunctionManagerPage* page, const Mouse& mouse, const Keyboard& kb);
 void drawFunctionManagerPage(sf::RenderWindow& window , FunctionManagerPage* page);
+bool chartNeedsUpdate(FunctionManagerPage* page);
+std::vector<FunctionString> getFunctionList(FunctionManagerPage* list);

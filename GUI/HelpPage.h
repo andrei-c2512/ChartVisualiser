@@ -11,3 +11,5 @@ struct HelpPage {
 
 void initHelpPage(HelpPage* page , sf::Vector2i pos , sf::Vector2i size);
 void drawHelpPage(sf::RenderWindow&, HelpPage* page);
+
+

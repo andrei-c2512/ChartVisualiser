@@ -13,7 +13,7 @@ void initChartBackground(ChartBackground* background , int x , int y , Size size
     background->zoom = 1.0f;
     background->s = size0;
 
-    background->rectSizeBase = {CHART_UNIT_SIZE , CHART_UNIT_SIZE};
+    background->rectSizeBase = {int(CHART_UNIT_SIZE) , int(CHART_UNIT_SIZE)};
     background->rectSizeCurrent = background->rectSizeBase;
 
 }

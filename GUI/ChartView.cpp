@@ -28,8 +28,8 @@ void initChartView(ChartView* view , int x0 , int y0  ,Size size0 , const Mouse*
 
 
 
-    view->boundLeft = -20 * CHART_UNIT_SIZE;
-    view->boundRight = 20 * CHART_UNIT_SIZE;
+    view->boundLeft = -200 * CHART_UNIT_SIZE;
+    view->boundRight = 200 * CHART_UNIT_SIZE;
 }
 void runChartView(ChartView* view , const Mouse& mouse, const Keyboard& kb){
     const float zoomIncrease = 1.05f;

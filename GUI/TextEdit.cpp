@@ -18,13 +18,28 @@ void runTextEdit(TextEdit* edit, const Mouse& mouse ,const Keyboard& kb) {
 
 	float f = kb.clock.getElapsedTime().asSeconds();
 	if (edit->selected && kb.keyPressed && kb.samePoll && !kb.usedKey) {
-		if (kb.lastKey != '`') {
-			edit->text += kb.lastKey;
-			kb.usedKey = true;
-		}
-		else {
-			if(edit->text.empty() == false)
-			edit->text.pop_back();
+		switch (kb.lastKey) {
+		case '`':
+				if (edit->text.empty() == false)
+					edit->text.pop_back();
+				break;
+		case '\n':
+				edit->done = true;
+				edit->selected = false;
+				if (edit->clock) {
+					delete edit->clock;
+					edit->clock = nullptr;
+				}
+				break;
+		case '\0':
+				break;
+		case '$':
+				edit->text += sf::Clipboard::getString();
+				break;
+		default:
+				edit->text += kb.lastKey;
+				kb.usedKey = true;
+				break;
 		}
 	}
 

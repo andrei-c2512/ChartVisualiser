@@ -21,19 +21,26 @@ void initIconDrawer(IconDrawer* drawer, std::string imgPath) {
 }
 
 void drawIcon(IconDrawer* drawer, sf::RenderWindow& window  , sf::Vector2i pos , sf::Vector2i size, sf::Color color) {
-	for (const sf::Vector2u& point : drawer->pixels) {
-		drawer->img.setPixel(point.x, point.y, color);
+	if (color != drawer->lastColor) {
+		for (const sf::Vector2u& point : drawer->pixels) {
+			drawer->img.setPixel(point.x, point.y, color);
+		}
+		drawer->texture.loadFromImage(drawer->img);
+		drawer->texture.setSmooth(true);
+		drawer->sprite.setTexture(drawer->texture);
+
+
+		sf::Vector2i newPos = pos + sf::Vector2i((size.x - drawer->texture.getSize().x) / 2, (size.y - drawer->texture.getSize().y) / 2);
+		drawer->sprite.setPosition(SFHelper::toVec2f(newPos));
+		window.draw(drawer->sprite);
+
+		drawer->lastColor = color;
 	}
-	sf::Texture texture;
-	texture.loadFromImage(drawer->img);
-	texture.setSmooth(true);
-	sf::Sprite sprite;
-	sprite.setTexture(texture);
-
-
-	sf::Vector2i newPos = pos + sf::Vector2i((size.x - texture.getSize().x) / 2, (size.y - texture.getSize().y) / 2);
-	sprite.setPosition(SFHelper::toVec2f(newPos));
-	window.draw(sprite);
+	else {
+		sf::Vector2i newPos = pos + sf::Vector2i((size.x - drawer->texture.getSize().x) / 2, (size.y - drawer->texture.getSize().y) / 2);
+		drawer->sprite.setPosition(SFHelper::toVec2f(newPos));
+		window.draw(drawer->sprite);
+	}
 }
 
 
@@ -51,10 +58,11 @@ bool runButton(Button* button , const Mouse& mouse){
 	bool in = rect.contains(mousePos);
 
 	if (in) {
-		if (mouse.current == sf::Event::MouseButtonPressed)
+		if (mouse.current == sf::Event::MouseButtonPressed && mouse.samePoll == false)
 		{
 			button->state = ViewState::PRESSED;
 			button->onClick();
+			mouse.samePoll = true;
 			return true;
 		}
 		else

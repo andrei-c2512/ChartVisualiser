@@ -10,4 +10,4 @@ struct Keyboard {
 	sf::Clock clock;
 };
 
-void updateKeyboard(Keyboard& kb, sf::Event ev , bool shift);
+void updateKeyboard(Keyboard& kb, sf::Event ev , bool shift, bool control);

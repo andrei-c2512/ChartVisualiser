@@ -42,5 +42,5 @@ void drawStackedView(sf::RenderWindow& window, StackedView* stackedView) {
 	}
 }
 void destroyStackedView(StackedView* view) {
-
+	destroyFunctionManagerPage(&view->functionPage);
 }

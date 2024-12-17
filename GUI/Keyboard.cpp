@@ -1,8 +1,11 @@
 #include "Keyboard.h"
 #include <iostream>
 
-char keyToChar(sf::Keyboard::Key key, bool shift) {
+char keyToChar(sf::Keyboard::Key key, bool shift , bool control) {
     if (key >= sf::Keyboard::A && key <= sf::Keyboard::Z) {
+        if (key == sf::Keyboard::V && control) {
+            return '$';
+        }
         char baseChar = char(key - sf::Keyboard::A + 'a'); 
         return shift ? toupper(baseChar) : baseChar; 
     }
@@ -43,14 +46,17 @@ char keyToChar(sf::Keyboard::Key key, bool shift) {
     case sf::Keyboard::LBracket: return shift ? '{' : '[';
     case sf::Keyboard::RBracket: return shift ? '}' : ']';
     case sf::Keyboard::Backspace: return '`';
+    case sf::Keyboard::LShift: return '\0';
+    case sf::Keyboard::RShift: return '\0';
+    case sf::Keyboard::Enter: return '\n';
     default: return NULL;
     }
 }
 
-void updateKeyboard(Keyboard& kb, sf::Event ev , bool shift) {
+void updateKeyboard(Keyboard& kb, sf::Event ev , bool shift , bool control) {
     if (ev.type == sf::Event::KeyPressed) {
         kb.keyPressed = true;
-        kb.lastKey = keyToChar(ev.key.code, shift);
+        kb.lastKey = keyToChar(ev.key.code, shift , control );
         kb.samePoll = true;
     }
     else if(!kb.samePoll)

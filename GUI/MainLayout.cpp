@@ -34,6 +34,18 @@ void initMainLayout(MainLayout* layout , Size size0 , const Mouse* mouse ){
 }
 
 void runMainLayout(MainLayout* layout, const Mouse& mouse , const Keyboard& kb){
+    bool updateChart = false;
+    //this looks retarded but egh , too lazy to encapsulate. It ain't that big of a project
+    StackedView* stackedView = layout->functionView->stackedView;
+
+    if (stackedView->option == Options::FunctionList) {
+        updateChart = chartNeedsUpdate(&stackedView->functionPage);
+    }
+    
+    if (updateChart) {
+        auto vec = getFunctionList(&stackedView->functionPage);
+        setFuncList(layout->chartView->chart, vec);
+    }
     runFunctionView(layout->functionView, mouse, kb);
     runChartView(layout->chartView , mouse , kb);
 }

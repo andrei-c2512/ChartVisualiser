@@ -10,6 +10,8 @@ void updateMouseByEvent(Mouse& mouse, sf::Event ev) {
     updateHelperByEvent(mouse.helper, ev);
     mouse.last = mouse.current;
     mouse.current = ev.type;
+    if (ev.type == sf::Event::EventType::MouseButtonReleased)
+        mouse.samePoll = false;
 }
 
 void updateDragHelper(DragHelper& helper) {

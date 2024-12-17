@@ -10,6 +10,9 @@
 struct IconDrawer {
     sf::Image img;
     std::vector<sf::Vector2u> pixels;
+    sf::Color lastColor;
+    sf::Sprite sprite;
+    sf::Texture texture;
 };
 
 void initIconDrawer(IconDrawer* drawer, std::string imgPath);

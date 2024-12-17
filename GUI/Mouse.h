@@ -18,6 +18,7 @@ struct Mouse{
     sf::Event::EventType current;
 
     sf::Vector2i windowPos;
+    mutable bool samePoll = false;
 };
 
 void updateMouseByEvent(Mouse& mouse , sf::Event ev);

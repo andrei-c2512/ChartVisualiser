@@ -21,6 +21,7 @@ struct TextEdit {
 	static constexpr int32_t lineHeight = 20;
 
 	int32_t bugGuard = 30;
+	bool done = false;
 };
 
 void initTextEdit(TextEdit* edit, sf::Vector2i pos, sf::Vector2i size);

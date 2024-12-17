@@ -13,6 +13,7 @@ struct StackedView{
 
     FunctionManagerPage functionPage;
     HelpPage helpPage;
+
     Options option;
 };
 

@@ -3,8 +3,11 @@
 #define GUICOMMON_H_INCLUDED
 #include <iostream>
 #include <assert.h>
+#include <stack>
+#include "../FunctionProcessor.h"
+#include "SFML/Graphics.hpp"
 
-#define CHART_UNIT_SIZE 40
+#define CHART_UNIT_SIZE 40.0f
 #define MIN_ZOOM 0.5f
 #define MAX_ZOOM 4.0f
 
@@ -39,6 +42,17 @@ enum Options {
     Integral,
     Help,
     Count
+};
+
+
+struct FunctionString {
+    std::string funcStr = "";
+    int32_t index = 0;
+    sf::Color color;
+    std::stack<char> operators;
+    std::stack<float> operands;
+    std::vector<CalculationStep> steps;
+    bool needsUpdate = false;
 };
 
 char* intToString(int nr);
