@@ -74,26 +74,56 @@ vector<Point> calculateExtrem(string s, stack<char> operators, stack<double> ope
     */
     return extremPoints;
 }
-/*Equation horizontalAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
+Equation plusHorizontalAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
 {
-    Equation result;
-
-    double positivInfinit = limitPoz(s,operators,operands,steps), negativeInfinit = limitNeg(s, operators, operands, steps);
-    if (abs(positivInfinit) < infinit)
-    {
-        cout << "Horizontal asymptote to inf: y = " << positivInfinit << '\n';
-        result.offset=positivInfinit;
-    }
-    if (abs(negativeInfinit) < infinit)
-    {
-        cout << "Horizontal asymptote to -inf: y = " << negativeInfinit << '\n';
-        result.offset=negativeInfinit;
-    }
+    Equation result(0, 0, false);
+    double limit = limitPoz(s, operators, operands, steps)
+        if (abs(limit) < infinit)
+        {
+            result.valid = true;
+        result.offset = limit;
+        }
     return result;
-}*/
-Equation slantAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
+}
+Equation minusHorizontalAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
+{
+    Equation result(0, 0, false);
+    double limit = limitNeg(s, operators, operands, steps)
+        if (abs(limit) < infinit)
+        {
+            result.valid = true;
+            result.offset = limit;
+        }
+    return result;
+}
+Equation minusSlantAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
 {
     Equation result(0,0,false);
+    string t = "(" + s + "/x)";
+    initFunc(t);
+    double m = limitNeg(t, operators, operands, steps);
+    if (abs(m) < infinit && abs(m) > epsi)
+    {
+        stringstream ss;
+        ss << m;
+        string str = ss.str();
+        string p = "( " + s + "- " + str + " * x )";
+        double n = limitPoz(p, operators, operands, steps);
+        result = Equation(n, m, 1);
+    }
+    return result;
+}
+bool isVerticalAsymptote(string s,stack<char> operators, stack<double> operands,vector<CalculationStep> steps, double x)
+{
+    if (abs(calculateViaSteps(s, operators, operands, steps, x - (1e-9))) >= infinit)
+        return true;
+    if (abs(calculateViaSteps(s, operators, operands, steps, x + (1e-9))) >= infinit)
+        return true;
+    return false;
+}
+Equation plusSlantAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
+{
+    Equation result(0, 0, false);
     string t = "(" + s + "/x)";
     initFunc(t);
     double m = limitPoz(t, operators, operands, steps);
@@ -107,28 +137,8 @@ Equation slantAsymptote(string s, stack<char> operators, stack<double> operands,
         result = Equation(n, m, 1);
     }
     return result;
-    /*m = limitNeg(t, operators, operands, steps);
-    if (abs(m) < infinit && abs(m) > epsi)
-    {
-        stringstream ss;
-        ss << m;
-        string str = ss.str();
-        string p = "( " + s + "- " + str + " * x )";
-        double n = limitPoz(p, operators, operands, steps);
-        cout << "Slant asymptote to -infinit y = ";
-        if (m != 1)
-            cout << m << "*";
-        cout << "x";
-        if (n != 0)
-        {
-            if (n > 0)
-                cout << "+" << n;
-            else
-                cout << n;
-        }
-    }*/
 }
-bool isVerticalAsymptote(string s,stack<char> operators, stack<double> operands,vector<CalculationStep> steps, double x)
+bool isVerticalAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps, double x)
 {
     if (abs(calculateViaSteps(s, operators, operands, steps, x - (1e-9))) >= infinit)
         return true;
@@ -136,7 +146,6 @@ bool isVerticalAsymptote(string s,stack<char> operators, stack<double> operands,
         return true;
     return false;
 }
-
 
 vector<Interv> interval(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps, double a, double b)
 {
