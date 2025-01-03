@@ -131,7 +131,7 @@ StatusCode isValidNumber(string &s)
 StatusCode isValidUnaryOperation(string s)
 {
     noSpaces(s);
-    initFuncManager(s);
+    initFunc(s);
     int lastPoz = s.find(" ")+1,firstPoz=0;
     string p = s.substr(firstPoz,lastPoz);
     while(lastPoz<s.length())
