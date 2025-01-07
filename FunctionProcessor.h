@@ -4,6 +4,8 @@
 #include <vector>
 #include <stack>
 #include <string_view>
+#include "SFML/Graphics.hpp"
+#include "MathConcepts.h"
 
 using namespace std;
 
@@ -23,6 +25,26 @@ struct CalculationStep {
 
     double (*binaryOp)(double, double) = nullptr;
     double (*unaryOp)(double) = nullptr;
+};
+
+struct FunctionString {
+    FunctionString() {
+        asymptotes.resize((int)AsymptoteType::COUNT);
+    }
+    std::string unprocessedFunc = "";
+    std::string funcStr = "";
+    int32_t index = 0;
+    sf::Color color;
+    std::stack<char> operators;
+    std::stack<double> operands;
+    std::vector<CalculationStep> steps;
+    std::vector<sf::Vector2f> minPoints;
+    std::vector<sf::Vector2f> maxPoints;
+
+    Domain domain;
+    bool needsUpdate = false;
+
+    std::vector<Equation> asymptotes;
 };
 
 bool isOperation(string s);

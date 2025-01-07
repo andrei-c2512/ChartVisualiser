@@ -1,9 +1,8 @@
 #include "FunctionView.h"
 #include "SFHelper.h"
 
-void initFunctionView(FunctionView* view, sf::Vector2i pos, sf::Vector2i size) {
-	view->pos = pos;
-	view->size = size;
+void initFunctionView(FunctionView* view, sf::Rect<int> rect) {
+	view->rect = rect;
 	view->rightMargin = 8;
 
 	view->optionTab = new OptionTab;
@@ -12,24 +11,47 @@ void initFunctionView(FunctionView* view, sf::Vector2i pos, sf::Vector2i size) {
 	const int tabStretch = 2;
 	const int contentStretch = 7;
 
-	const int segment = view->size.x / (tabStretch + contentStretch);
+	const int segment = view->rect.width / (tabStretch + contentStretch);
 	const int tabWidth = segment * tabStretch;
 	const int contentWidth = segment * contentStretch;
 
-	initOptionTab(view->optionTab , view->pos , sf::Vector2i(tabWidth - 5, view->size.y));
+	initOptionTab(view->optionTab , sf::Rect<int>(rect.getPosition(), sf::Vector2i(tabWidth - 5, view->rect.height)));
 	initStackedView(view->stackedView,
-		sf::Vector2i(pos.x + tabWidth + view->rightMargin, pos.y), sf::Vector2i(contentWidth, size.y));
+		sf::Rect(sf::Vector2i(rect.left + tabWidth + view->rightMargin, rect.top), sf::Vector2i(contentWidth, rect.height)));
 }
-void runFunctionView(FunctionView* view, const Mouse& mouse ,const Keyboard& kb) {
+
+void setRect(FunctionView* view, sf::Rect<int> rect) {
+
+}
+void runFunctionView(FunctionView* view, const Mouse& mouse ,const Keyboard& kb, Chart& chart) {
+	auto before = view->stackedView->option;
 	view->stackedView->option = view->optionTab->currentOption;
 
+	if (before != view->stackedView->option && view->stackedView->option == Options::Analysis) {
+		view->stackedView->functionDetails.indexChanged = true;
+	}
 	runOptionTab(view->optionTab, mouse);
-	runStackedView(view->stackedView, mouse, kb);
+	runStackedView(view->stackedView, mouse, kb , chart);
+	if (view->stackedView->option == Options::FunctionList) {
+		int index = detailsButtonPressed(&view->stackedView->functionPage);
+		if (index != -1) {
+			auto& optionList = view->optionTab->optionList;
+
+			view->optionTab->lastSelected = int(Options::Analysis);
+			optionList[Options::Analysis]->selected = true;
+			optionList[Options::Analysis]->state = ViewState::SELECTED;
+			optionList[Options::FunctionList]->selected = false;
+			optionList[Options::FunctionList]->state = ViewState::NONE;
+			view->stackedView->option = view->optionTab->currentOption = Options::Analysis;
+			view->stackedView->functionDetails.index = index;
+			view->stackedView->functionDetails.indexChanged = true;
+		}
+	}
 }
 void drawFunctionView(sf::RenderWindow& window, FunctionView* view) {
 	sf::RectangleShape rect;
-	rect.setPosition(SFHelper::toVec2f(view->pos + sf::Vector2i(view->optionTab->size.x , 0)));
-	rect.setSize(sf::Vector2f(view->rightMargin, view->size.y));
+	rect.setPosition(SFHelper::toVec2f(view->rect.getPosition() + sf::Vector2i(view->optionTab->rect.width, 0)));
+	rect.setSize(sf::Vector2f(view->rightMargin, view->rect.height));
 	rect.setFillColor(Palette::optionTabMarginColor());
 
 	window.draw(rect);
@@ -39,4 +61,7 @@ void drawFunctionView(sf::RenderWindow& window, FunctionView* view) {
 void destroyFunctionView(FunctionView* view) {
 	destroyOptionTab(view->optionTab);
 	destroyStackedView(view->stackedView);
+
+	delete view->optionTab;
+	delete view->stackedView;
 }

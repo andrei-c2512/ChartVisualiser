@@ -1,21 +1,21 @@
 #include "StackedView.h"
 
 
-void initStackedView(StackedView* stackedView, sf::Vector2i pos, sf::Vector2i size) {
-	stackedView->pos = pos;
-	stackedView->size = size;
+void initStackedView(StackedView* stackedView, sf::Rect<int> rect) {
+	stackedView->rect = rect;
 	stackedView->option = Options::FunctionList;
 
-	initFunctionManagerPage(&stackedView->functionPage, pos, size);
-	initHelpPage(&stackedView->helpPage, pos, size);
+	initFunctionManagerPage(&stackedView->functionPage, rect);
+	initHelpPage(&stackedView->helpPage,rect);
+	initFunctionDetailsPage(&stackedView->functionDetails, rect);
 }
-void runStackedView(StackedView* stackedView , const Mouse& mouse, const Keyboard& kb) {
-
+void runStackedView(StackedView* stackedView , const Mouse& mouse, const Keyboard& kb , Chart& chart) {
 	switch (stackedView->option) {
 	case Options::FunctionList:
 		runFunctionManagerPage(&stackedView->functionPage , mouse , kb);
 		break;
 	case Options::Analysis:
+		runFunctionDetailsPage(&stackedView->functionDetails, mouse, kb , chart);
 		break;
 	case Options::Integral:
 		break;
@@ -31,6 +31,7 @@ void drawStackedView(sf::RenderWindow& window, StackedView* stackedView) {
 		drawFunctionManagerPage(window , &stackedView->functionPage);
 		break;
 	case Options::Analysis:
+		drawFunctionDetailsPage(window, &stackedView->functionDetails);
 		break;
 	case Options::Integral:
 		break;

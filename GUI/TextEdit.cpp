@@ -17,7 +17,7 @@ void initTextEdit(TextEdit* edit, sf::Vector2i pos, sf::Vector2i size) {
 void runTextEdit(TextEdit* edit, const Mouse& mouse ,const Keyboard& kb) {
 
 	float f = kb.clock.getElapsedTime().asSeconds();
-	if (edit->selected && kb.keyPressed && kb.samePoll && !kb.usedKey) {
+	if (edit->selected && kb.keyPressed && kb.samePoll && !kb.usedKey && edit->charFilter(kb.lastKey)) {
 		switch (kb.lastKey) {
 		case '`':
 				if (edit->text.empty() == false)

@@ -2,14 +2,21 @@
 #include "GUICommon.h"
 #include "SFML/Graphics.hpp"
 
+
 struct HelpPage {
-	sf::Vector2i pos;
-	sf::Vector2i size;
+	sf::Rect<int> rect;
 	sf::Sprite wasdControlsSprite;
+	sf::Texture texture;
+
+	sf::Texture mouseLeftTexture;
+	sf::Texture mouseRightTexture;
+
+	sf::Sprite mouseLeftSprite;
+	sf::Sprite mouseRightSprite;
 };
 
 
-void initHelpPage(HelpPage* page , sf::Vector2i pos , sf::Vector2i size);
+void initHelpPage(HelpPage* page , sf::Rect<int> rect);
 void drawHelpPage(sf::RenderWindow&, HelpPage* page);
 
 

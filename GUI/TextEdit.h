@@ -2,6 +2,7 @@
 #include "SFML/Graphics.hpp"
 #include "Mouse.h"
 #include "Keyboard.h"
+#include <functional>
 
 struct TextEdit {
 	sf::Vector2i pos;
@@ -22,6 +23,8 @@ struct TextEdit {
 
 	int32_t bugGuard = 30;
 	bool done = false;
+
+	std::function<bool(char)> charFilter = [](char ch) { return true; };
 };
 
 void initTextEdit(TextEdit* edit, sf::Vector2i pos, sf::Vector2i size);

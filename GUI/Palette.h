@@ -34,6 +34,7 @@ namespace Palette {
     std::array<ViewPalette, 4> deleteButtonPalette();
     std::array<ViewPalette, 4> addButtonPalette();
     std::array<ViewPalette, 4> randomButtonPalette();
+    std::array<ViewPalette, 4> navigationButtonPalette();
 }
 
 

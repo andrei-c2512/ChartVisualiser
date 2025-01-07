@@ -2,8 +2,7 @@
 #include "Button.h"
 
 struct OptionTab {
-	sf::Vector2i pos;
-	sf::Vector2i size;
+	sf::Rect<int> rect;
 
 	sf::Color backgroundColor;
 	sf::Color separationMarginColor;
@@ -14,7 +13,7 @@ struct OptionTab {
 	Options currentOption = Options::FunctionList;
 };
 
-void initOptionTab(OptionTab* tab , sf::Vector2i pos , sf::Vector2i size);
+void initOptionTab(OptionTab* tab , sf::Rect<int> rect);
 void runOptionTab(OptionTab* tab , const Mouse& mouse);
 void drawOptionTab(sf::RenderWindow& window, OptionTab* tab);
 void destroyOptionTab(OptionTab* tab);

@@ -20,7 +20,7 @@ void initIconDrawer(IconDrawer* drawer, std::string imgPath) {
 
 }
 
-void drawIcon(IconDrawer* drawer, sf::RenderWindow& window  , sf::Vector2i pos , sf::Vector2i size, sf::Color color) {
+void drawIcon(IconDrawer* drawer, sf::RenderWindow& window  , sf::Rect<int> rect, sf::Color color) {
 	if (color != drawer->lastColor) {
 		for (const sf::Vector2u& point : drawer->pixels) {
 			drawer->img.setPixel(point.x, point.y, color);
@@ -30,14 +30,15 @@ void drawIcon(IconDrawer* drawer, sf::RenderWindow& window  , sf::Vector2i pos ,
 		drawer->sprite.setTexture(drawer->texture);
 
 
-		sf::Vector2i newPos = pos + sf::Vector2i((size.x - drawer->texture.getSize().x) / 2, (size.y - drawer->texture.getSize().y) / 2);
+		sf::Vector2i newPos = rect.getPosition() + sf::Vector2i((rect.width - drawer->texture.getSize().x) / 2, (rect.height - drawer->texture.getSize().y) / 2);
 		drawer->sprite.setPosition(SFHelper::toVec2f(newPos));
 		window.draw(drawer->sprite);
 
 		drawer->lastColor = color;
 	}
 	else {
-		sf::Vector2i newPos = pos + sf::Vector2i((size.x - drawer->texture.getSize().x) / 2, (size.y - drawer->texture.getSize().y) / 2);
+		//centering the sprite
+		sf::Vector2i newPos = rect.getPosition() + sf::Vector2i((rect.width - drawer->texture.getSize().x) / 2, (rect.height - drawer->texture.getSize().y) / 2);
 		drawer->sprite.setPosition(SFHelper::toVec2f(newPos));
 		window.draw(drawer->sprite);
 	}
@@ -46,16 +47,14 @@ void drawIcon(IconDrawer* drawer, sf::RenderWindow& window  , sf::Vector2i pos ,
 
 
 
-void initButton(Button* button , sf::Vector2i pos0 , sf::Vector2i size0 , const std::array<ViewPalette , 4>& palette){
-	button->pos = pos0;
-	button->size = size0;
+void initButton(Button* button ,sf::Rect<int> rect , const std::array<ViewPalette , 4>& palette){
+	button->rect = rect;
 	button->paletteList = palette;
 	button->onClick = []() {};
 }
 bool runButton(Button* button , const Mouse& mouse){
 	const sf::Vector2i& mousePos = mouse.windowPos;
-	sf::Rect<int> rect( button->pos , button->size );
-	bool in = rect.contains(mousePos);
+	bool in = button->rect.contains(mousePos);
 
 	if (in) {
 		if (mouse.current == sf::Event::MouseButtonPressed && mouse.samePoll == false)
@@ -91,15 +90,15 @@ void drawButton(sf::RenderWindow& window , Button* button){
 		text.setString(button->text);
 		text.setFont(Palette::font());
 		text.setFillColor(Palette::mainTextColor());
-		text.setPosition(SFHelper::toVec2f(button->pos));
+		text.setPosition(SFHelper::toVec2f(button->rect.getPosition()));
 	}
 	
 	if (button->drawCircle) {
 		sf::CircleShape shape;
-		shape.setPosition(SFHelper::toVec2f(button->pos));
+		shape.setPosition(SFHelper::toVec2f(button->rect.getPosition()));
 		shape.setOutlineColor(p.borderColor);
 		shape.setFillColor(p.backgroundColor);
-		shape.setRadius(button->size.x / 2);
+		shape.setRadius(button->rect.width / 2);
 		shape.setOutlineThickness(3);
 
 		window.draw(shape);
@@ -109,14 +108,14 @@ void drawButton(sf::RenderWindow& window , Button* button){
 		sf::RectangleShape rect;
 		rect.setFillColor(p.backgroundColor);
 		rect.setOutlineColor(p.borderColor);
-		rect.setSize(SFHelper::toVec2f(button->size));
-		rect.setPosition(SFHelper::toVec2f(button->pos));
+		rect.setSize(SFHelper::toVec2f(button->rect.getSize()));
+		rect.setPosition(SFHelper::toVec2f(button->rect.getPosition()));
 		rect.setOutlineThickness(3);
 		window.draw(rect);
 	}
 
 	if (button->iconDrawer) {
-		drawIcon(button->iconDrawer, window, button->pos , button->size , p.textColor);
+		drawIcon(button->iconDrawer, window, button->rect , p.textColor);
 	}
 }
 

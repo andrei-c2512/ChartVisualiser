@@ -8,18 +8,18 @@
 #include <conio.h>
 #include "Mouse.h"
 #include "Keyboard.h"
+#include "Button.h"
 
 struct ChartView{
     Chart* chart;
     ChartBackground* background;
-
+    sf::Rect<int> rect;
     //remembers the area that needs to be shown
     Margins margin;
-    Rect viewport;
+    sf::Rect<int> viewport;
 
-    int x , y;
     int borderWidth;
-    Size s;
+
 
     bool redraw = true;
     const Mouse* mouse;
@@ -28,13 +28,20 @@ struct ChartView{
     int32_t boundRight;
     int32_t boundTop;
     int32_t boundBottom;
+
+    bool previewMode = false;
+    Button goBackButton;
+    Button saveButton;
 };
 
 
 bool cameraInBoundsX(ChartView* view, int32_t x);
 bool cameraInBoundsY(ChartView* view, int32_t y);
 
-void initChartView(ChartView* view , int x , int y , Size size0 , const Mouse* mouse);
+void initChartView(ChartView* view , sf::Rect<int> rect);
+void setChartViewRect(ChartView* view, sf::Rect<int> rect);
+
+
 void runChartView(ChartView* view , const Mouse& mouse , const Keyboard& kb);
 void drawChartView(sf::RenderWindow& window, ChartView* view);
 void destroyChartView(ChartView* view);

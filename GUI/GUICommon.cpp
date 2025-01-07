@@ -2,52 +2,82 @@
 
 
 
-Size adjustSizeToMargins(const Size& s , const Margins& margin){
-    return {s.width - margin.left - margin.right , s.height - margin.top - margin.bottom};
+sf::Rect<int> adjustRectToMargins(const sf::Rect<int>& rect, const Margins& margin) {
+	return sf::Rect<int>(rect.left + margin.left, rect.top + margin.top,
+		rect.width - margin.right - margin.left ,
+		rect.height - margin.top - margin.bottom);
 }
 
-Size horizontalSizeByStretchFactor(const Size& totalSize , int segments , int stretch){
-    const float segmentW = totalSize.width / segments;
+int horizontalSizeByStretchFactor(int totalSize , int segments , int stretch){
+    const float segmentW = float(totalSize) / segments;
 
-    return { int(segmentW * float(stretch)) , totalSize.height};
+    return int(segmentW * float(stretch));
 }
 
-bool intersection(const Rect& rect1 , const Rect& rect2){
-    return rect1.x + rect1.s.width > rect2.x && rect1.x < rect2.x + rect2.s.width &&
-        rect1.y + rect1.s.height > rect2.y && rect1.y < rect2.y + rect2.s.height ;
-}
+std::vector<sf::Vector2i> getAlignedPositions(const sf::Rect<int>& rect, int items , const sf::Vector2i& itemSize) {
+	std::vector<sf::Vector2i> list(items);
+	int spacingY = (rect.height - itemSize.y) / 2;
+	int spacingX = (rect.width - items * itemSize.x) / (items + 1);
 
+	int startX = spacingX;
+	int startY = spacingY;
+	for (sf::Vector2i& point : list) {
+		point.x = startX + rect.left;
+		point.y = startY + rect.top;
 
-void logSize(Size s){
-    std::cout << "033\[32m" << "[SIZE]" << "033\[0m \n";
-    std::cout << "Width: " << s.width << " Height: " << s.height;
-}
-
-char* intToString(int nr) {
-	int cpy = nr;
-	bool negative = nr < 0;
-	int digits = negative;
-
-	while (cpy) {
-		digits++;
-		cpy /= 10;
+		startX += spacingX + itemSize.x;
 	}
-
-	char* strNum = new char[digits + 1];
-	strNum[digits] = NULL;
-
-	if (negative)
-	{
-		strNum[0] = '-';
-		nr = -nr;
-	}
-	while (nr) {
-		digits--;
-		strNum[digits] = char(nr % 10 + 48);
-		nr /= 10;
-	}
-
-	//std::cout << "number" << std::endl;
-	return strNum;
+	return list;
 }
 
+int32_t getCenteredX(int32_t x, int32_t width, int32_t itemWidth) noexcept {
+    return x + (width - itemWidth) / 2;
+}
+double multiplierByZoom(double zoom) {
+    if (zoom < 0.005f) {
+        return 2500.0;
+    }
+    else if (zoom < 0.01f) {
+        return 1000.0;
+    }
+    else if (zoom < 0.05f) {
+        return 250.0;
+    }
+    else if (zoom < 0.1f) {
+        return 50.0;
+    }
+    else if (zoom < 0.25f) {
+        return 10.0;
+    }
+    else if (zoom < 0.5f)
+    {
+        return 5.0;
+    }
+    else if (zoom < 0.75) {
+        return 2.0;
+    }
+    else if (zoom < 1.0)
+    {
+        return 2.0;
+    }
+    else if (zoom < 2.0)
+    {
+        return 1.0;
+    }
+    else if (zoom < 4.0) {
+        return 0.5;
+    }
+    else if (zoom < 5.0) {
+        return 0.5;
+    }
+    else if (zoom < 7.0) {
+        return 0.2;
+    }
+    else if (zoom < 10.0) {
+        return 0.1;
+    }
+    else if (zoom < 20.0)
+        return 0.1;
+
+    return 0.05;
+}

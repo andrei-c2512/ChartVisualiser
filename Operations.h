@@ -1,6 +1,7 @@
 #ifndef OPERATIONS_H_INCLUDED
 #define OPERATIONS_H_INCLUDED
 
+
 bool DifInf(double x);
 double Logarithm(double x);
 double Exponential(double x);

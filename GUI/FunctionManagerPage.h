@@ -5,12 +5,13 @@
 #include "../FunctionProcessor.h"
 
 struct FunctionBox {
-	sf::Vector2i pos;
-	sf::Vector2i size;
+	sf::Rect<int> rect;
 	Margins margin;
 	TextEdit textEdit;
 	Button deleteBtn;
 	Button randomFunctionBtn;
+	Button detailsBtn;
+
 	sf::Text formatMessage;
 	sf::Color funcColor;
 
@@ -19,7 +20,7 @@ struct FunctionBox {
 	static constexpr int32_t buttonSize = 48;
 };
 
-void initFunctionBox(FunctionBox* box, sf::Vector2i pos, sf::Vector2i size);
+void initFunctionBox(FunctionBox* box, sf::Rect<int> rect);
 void drawFunctionBox(sf::RenderWindow& window, FunctionBox* box);
 void runFunctionBox(FunctionBox* box, const Mouse& mouse, const Keyboard& kb);
 int32_t getFunctionBoxHeight(FunctionBox* box);
@@ -31,23 +32,26 @@ struct FunctionList {
 struct FunctionManagerPage {
 	sf::Text title;
 
-	sf::Vector2i pos;
-	sf::Vector2i size;
+	sf::Rect<int> rect;
 	Margins margin;
 
 	std::vector<FunctionBox*> list;
 
 	Button addButton;
-	Button loadFromFileBtn;
+	Button saveToFileButton;
 
 	static constexpr int32_t titleSpacing = 30;
 	static constexpr int32_t buttonSize = 48;
 	static constexpr int32_t functionalitySpacing = 30;
 };
 
-void initFunctionManagerPage(FunctionManagerPage* page, sf::Vector2i pos, sf::Vector2i size);
+void initFunctionManagerPage(FunctionManagerPage* page, sf::Rect<int> rect);
 void destroyFunctionManagerPage(FunctionManagerPage* page);
 void runFunctionManagerPage(FunctionManagerPage* page, const Mouse& mouse, const Keyboard& kb);
 void drawFunctionManagerPage(sf::RenderWindow& window , FunctionManagerPage* page);
 bool chartNeedsUpdate(FunctionManagerPage* page);
+
+//returns the index of the specified function
+int detailsButtonPressed(FunctionManagerPage* page);
+bool saveToFilePressed(FunctionManagerPage* page);
 std::vector<FunctionString> getFunctionList(FunctionManagerPage* list);

@@ -7,19 +7,20 @@
 
 //the background will look like a math book
 struct ChartBackground{
-    int x , y;
-    Size s;
+    sf::Rect<int> rect;
 
-    Size rectSizeBase;
-    Size rectSizeCurrent;
+    sf::Vector2<double> rectSizeBase;
+    sf::Vector2<double> rectSizeCurrent;
 
-    int offsetX;
-    int offsetY;
-    float zoom;
+    
+    const double* offsetX;
+    const double* offsetY;
+    double zoom;
 };
 
-void initChartBackground(ChartBackground* background , int x , int y , Size size0);
+void initChartBackground(ChartBackground* background ,sf::Rect<int> rect);
+void setChartBackgroundRect(ChartBackground* background, sf::Rect<int> rect);
 void drawChartBackground(sf::RenderWindow& window, ChartBackground* background);
-void setChartBackgroundZoom(ChartBackground* background, float zoom);
+void setChartBackgroundZoom(ChartBackground* background, double zoom);
 
 #endif // CHARTBACKGROUNND_H_INCLUDED

@@ -20,15 +20,16 @@ const char UnaryOperations[] = "scrael";
 
 int8_t priority(char c)
 {
+
     if (strchr("()", c) != 0)
         return 1;
-    if (strchr("+-", c) != 0)
-        return 2;
-    if (strchr("*/", c) != 0)
-        return 3;
-    if (c == '^')
-        return 4;
     if (strchr("=#><", c) != 0)
+        return 2;
+    if (strchr("+-", c) != 0)
+        return 3;
+    if (strchr("*/", c) != 0)
+        return 4;
+    if (c == '^')
         return 5;
     if (strchr(UnaryOperations, c) != 0)
         return 6;
@@ -39,7 +40,10 @@ void negativeNumbers(string& s)
     for (int i = 0; i < s.length(); i++)
         if (s[i] == '-')
         {
-            if (!isdigit(s[i - 1]) && s[i - 1] != 'x')
+            int j = 1;
+            while (s[i - j] == ' ')
+                j++;
+            if (!isdigit(s[i - j]) && s[i - j] != 'x' && s[i - j] != ')')
             {
                 s.insert(i, "0");
                 i++;
@@ -51,8 +55,6 @@ string extractFunctionFromFile()
 {
     string s;
     getline(fin, s);
-    s.insert(0, "(");
-    s = s + ")";
     return s;
 }
 double number(const string_view& s)
@@ -362,7 +364,7 @@ std::vector<CalculationStep> getOpList(const string& s, stack<char>& operators, 
             operands.emplace(number(p));
         if (isBinaryOperation || isUnaryOperation)
         {
-            while (priority(operators.top()) >= priority(p[0])) 
+            while (priority(operators.top()) >= priority(p[0]))
                 collectOperation(operators, operands, opList);
             if (p[0] == 's')
             {
@@ -404,7 +406,7 @@ double calculateViaSteps(const string& s, stack<char>& operators, stack<double>&
             operators.emplace('(');
         else if (p[0] == ')')
         {
-            while (operators.top() != '('){
+            while (operators.top() != '(') {
                 applyOperation(operators, operands, opList[step++]);
                 if (isnan(operands.top()))
                 {
@@ -414,7 +416,7 @@ double calculateViaSteps(const string& s, stack<char>& operators, stack<double>&
                         operators.pop();
                     return numeric_limits<double>::quiet_NaN();
                 }
-        }
+            }
             operators.pop();
         }
         else if (p[0] == 'x')
@@ -423,7 +425,7 @@ double calculateViaSteps(const string& s, stack<char>& operators, stack<double>&
             operands.emplace(number(p));
         else if (opPriority)
         {
-            while (priority(operators.top()) >= opPriority){
+            while (priority(operators.top()) >= opPriority) {
                 applyOperation(operators, operands, opList[step++]);
                 if (isnan(operands.top()))
                 {
@@ -433,7 +435,7 @@ double calculateViaSteps(const string& s, stack<char>& operators, stack<double>&
                         operators.pop();
                     return numeric_limits<double>::quiet_NaN();
                 }
-        }
+            }
             if (p[0] == 's')
             {
                 if (p[1] == 'q')
@@ -454,8 +456,8 @@ double calculateViaSteps(const string& s, stack<char>& operators, stack<double>&
         applyOperation(operators, operands, opList[step++]);
         if (isnan(operands.top()))
         {
-            while (operands.empty() == false) 
-                operands.pop();            
+            while (operands.empty() == false)
+                operands.pop();
             while (operators.empty() == false)
                 operators.pop();
             return numeric_limits<double>::quiet_NaN();

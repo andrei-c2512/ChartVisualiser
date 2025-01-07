@@ -3,22 +3,19 @@
 
 
 
-void initOptionTab(OptionTab* tab, sf::Vector2i pos, sf::Vector2i size) {
-	tab->pos = pos;
-	tab->size = size;
+void initOptionTab(OptionTab* tab, sf::Rect<int> rect) {
+	tab->rect = rect;
 
 	tab->optionList.resize(int32_t(Options::Count));
 
-	int32_t baseHeight = size.x;
+	int32_t baseHeight = rect.width;
 
 	std::vector<Button*>& list = tab->optionList;
 	for (int32_t i = 0; i < list.size(); i++) {
 		list[i] = new Button;
 		initButton(list[i], 
-			tab->pos + sf::Vector2i(0 , baseHeight * i) , 
-			sf::Vector2i(size.x, baseHeight) , Palette::optionButtonPalette());
-
-		std::cout << list[i]->pos.x << ' ' << list[i]->pos.y << std::endl;
+			sf::Rect(rect.getPosition() + sf::Vector2i(-3, baseHeight * i),sf::Vector2i(rect.width, baseHeight)) , 
+			Palette::optionButtonPalette());
 	}
 
 	tab->backgroundColor = Palette::optionTabBackground();
@@ -27,8 +24,12 @@ void initOptionTab(OptionTab* tab, sf::Vector2i pos, sf::Vector2i size) {
 	setButtonIcon(list[Options::Analysis]    , "GUI/Resources/analysisIcon64x64.png");
 	setButtonIcon(list[Options::Integral]    , "GUI/Resources/integralIcon64x64.png");
 
-	list[Options::Help]->pos.y = pos.y + size.y - baseHeight;
+	list[Options::Help]->rect.top = rect.top + rect.height - baseHeight;
+	list[Options::Help]->rect.left = tab->rect.left - 3;
 	setButtonIcon(list[Options::Help]        , "GUI/Resources/questionMarkIcon64x64.png");
+
+
+	list[Options::FunctionList]->selected = true;
 }
 
 
@@ -49,8 +50,8 @@ void runOptionTab(OptionTab* tab, const Mouse& mouse) {
 }
 void drawOptionTab(sf::RenderWindow& window, OptionTab* tab) {
 	sf::RectangleShape rect;
-	rect.setPosition(SFHelper::toVec2f(tab->pos));
-	rect.setSize(SFHelper::toVec2f(tab->size));
+	rect.setPosition(SFHelper::toVec2f(tab->rect.getPosition()));
+	rect.setSize(SFHelper::toVec2f(tab->rect.getSize()));
 	rect.setFillColor(tab->backgroundColor);
 
 	window.draw(rect);

@@ -16,11 +16,10 @@ struct IconDrawer {
 };
 
 void initIconDrawer(IconDrawer* drawer, std::string imgPath);
-void drawIcon(IconDrawer* drawer , sf::RenderWindow& window ,  sf::Vector2i pos , sf::Vector2i size, sf::Color color);
+void drawIcon(IconDrawer* drawer , sf::RenderWindow& window ,  sf::Rect<int> rect, sf::Color color);
 
 struct Button{
-    sf::Vector2i pos;
-    sf::Vector2i size;
+    sf::Rect<int> rect;
 
     ViewState state = ViewState::NONE;
     //default , but defaults is a reserved word for some reason in codeblocks
@@ -39,7 +38,7 @@ struct Button{
 
 
 void setButtonIcon(Button* button, std::string imagePath);
-void initButton(Button* button , sf::Vector2i pos, sf::Vector2i size,  const std::array<ViewPalette , 4>& palette);
+void initButton(Button* button , sf::Rect<int> rect,  const std::array<ViewPalette , 4>& palette);
 bool runButton(Button* button , const Mouse& mouse);
 void drawButton(sf::RenderWindow& window, Button* button);
 void setOnClick(Button* btn , std::function<void()> func);

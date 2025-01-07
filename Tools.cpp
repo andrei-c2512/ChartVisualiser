@@ -9,7 +9,7 @@
 #define epsi 0.01
 
 using namespace std;
-void printPoint(const Point& v) {
+void printPoint(const sf::Vector2f& v) {
     std::cout<<fixed << setprecision(2) << v.x << ", " << v.y << std::endl;
 }
 
@@ -44,40 +44,50 @@ double limitNeg(string s, stack<char> operators, stack<double> operands, vector<
     return round(resCurrent);
 }
 //std::vector<sf::Vector2d>
-vector<Point> calculateExtrem(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps, double a, double b)
+vector<sf::Vector2f> calculateExtremMax(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps,
+    double a, double b, sf::Vector2f& maxGlobal)
 {
-    vector<Point> extremPoints;
-    double x = calculateViaSteps(s, operators, operands, steps, a), y = calculateViaSteps(s, operators, operands, steps, a+0.01);
-    double maxGlobal = -infinit, indMax = 0, minGlobal = infinit, indMin = 0;
-    for (double i = a * 100 + 2 ; i <= b * 100; i ++)
+    vector<sf::Vector2f> extremPoints;
+    double x = calculateViaSteps(s, operators, operands, steps, a), y = calculateViaSteps(s, operators, operands, steps, a + 0.01);
+    maxGlobal.y = -infinit, maxGlobal.x = 0;
+    for (double i = a * 100 + 2; i <= b * 100; i++)
     {
-        double z = calculateViaSteps(s, operators, operands, steps, i*0.01);
+        double z = calculateViaSteps(s, operators, operands, steps, i * 0.01);
         if (x < y && z < y && !isnan(y) && !isnan(x) && !isnan(z))
         {
-            extremPoints.push_back(Point(i*0.01- 0.01,y));
-            if (y > maxGlobal)
-                maxGlobal = y, indMax = i;
-        }
-        if (x > y && z > y && !isnan(y) && !isnan(x) && !isnan(z))
-        {
-            extremPoints.push_back(Point(i * 0.01 - 0.01, y));
-            if (y < minGlobal)
-                minGlobal = y, indMin = i;
+            extremPoints.push_back(sf::Vector2f(i * 0.01 - 0.01, y));
+            if (y > maxGlobal.y)
+                maxGlobal.y = y, maxGlobal.x = i * 0.01;
         }
         x = y;
         y = z;
     }
-    /*if     (maxGlobal != -infinit)
-        cout << fixed << setprecision(2) << '\n' << indMax << ' ' << maxGlobal << " Maxim Global" << '\n';
-    if (minGlobal != infinit)
-        cout << fixed << setprecision(2) << '\n' << indMin << ' ' << minGlobal << " Minim Global" << '\n';
-    */
+    return extremPoints;
+}
+vector<sf::Vector2f> calculateExtremMin(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps, 
+    double a, double b, sf::Vector2f& minGlobal)
+{
+    vector<sf::Vector2f> extremPoints;
+    double x = calculateViaSteps(s, operators, operands, steps, a), y = calculateViaSteps(s, operators, operands, steps, a + 0.01);
+    minGlobal.y = infinit, minGlobal.x = 0;
+    for (double i = a * 100 + 2; i <= b * 100; i++)
+    {
+        double z = calculateViaSteps(s, operators, operands, steps, i * 0.01);
+        if (x > y && z > y && !isnan(y) && !isnan(x) && !isnan(z))
+        {
+            extremPoints.push_back(sf::Vector2f(i * 0.01 - 0.01, y));
+            if (y < minGlobal.y)
+                minGlobal.y = y, minGlobal.x = i * 0.01;
+        }
+        x = y;
+        y = z;
+    }
     return extremPoints;
 }
 Equation plusHorizontalAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
 {
     Equation result(0, 0, false);
-    double limit = limitPoz(s, operators, operands, steps)
+    double limit = limitPoz(s, operators, operands, steps);
         if (abs(limit) < infinit)
         {
             result.valid = true;
@@ -88,7 +98,7 @@ Equation plusHorizontalAsymptote(string s, stack<char> operators, stack<double> 
 Equation minusHorizontalAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
 {
     Equation result(0, 0, false);
-    double limit = limitNeg(s, operators, operands, steps)
+    double limit = limitNeg(s, operators, operands, steps);
         if (abs(limit) < infinit)
         {
             result.valid = true;
@@ -96,44 +106,53 @@ Equation minusHorizontalAsymptote(string s, stack<char> operators, stack<double>
         }
     return result;
 }
-Equation minusSlantAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
+Equation minusSlantAsymptote(string s, stack<char> operators, stack<double> operands)
 {
-    Equation result(0,0,false);
-    string t = "(" + s + "/x)";
+    Equation result(0, 0, false);
+    string t = "( " + s + " ) / x";
     initFunc(t);
-    double m = limitNeg(t, operators, operands, steps);
+    vector<CalculationStep> stepst = getOpList(t, operators, operands);
+    double m = limitNeg(t, operators, operands, stepst);
     if (abs(m) < infinit && abs(m) > epsi)
     {
         stringstream ss;
         ss << m;
         string str = ss.str();
-        string p = "( " + s + "- " + str + " * x )";
-        double n = limitPoz(p, operators, operands, steps);
+        string p = s + "-" + str + "*x";
+        initFunc(p);
+        while (!operators.empty())
+            operators.pop();
+        while (!operands.empty())
+            operands.pop();
+        vector<CalculationStep> stepsp = getOpList(p, operators, operands);
+        double n = limitNeg(p, operators, operands, stepsp);
         result = Equation(n, m, 1);
     }
     return result;
 }
-bool isVerticalAsymptote(string s,stack<char> operators, stack<double> operands,vector<CalculationStep> steps, double x)
-{
-    if (abs(calculateViaSteps(s, operators, operands, steps, x - (1e-9))) >= infinit)
-        return true;
-    if (abs(calculateViaSteps(s, operators, operands, steps, x + (1e-9))) >= infinit)
-        return true;
-    return false;
-}
-Equation plusSlantAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps)
+
+Equation plusSlantAsymptote(string s, stack<char> operators, stack<double> operands)
 {
     Equation result(0, 0, false);
-    string t = "(" + s + "/x)";
+    string t = "( " + s + " ) / x";
     initFunc(t);
-    double m = limitPoz(t, operators, operands, steps);
+    vector<CalculationStep> stepst = getOpList(t, operators, operands);
+    double m = limitPoz(t, operators, operands, stepst);
     if (abs(m) < infinit && abs(m) > epsi)
     {
         stringstream ss;
         ss << m;
         string str = ss.str();
-        string p = "( " + s + "- " + str + " * x )";
-        double n = limitPoz(p, operators, operands, steps);
+        string p = s + "-" + str + "*x";
+        cout << s << endl << p << endl;
+        initFunc(p);
+        while (!operators.empty())
+            operators.pop();
+        while (!operands.empty())
+            operands.pop();
+        vector<CalculationStep> stepsp = getOpList(p, operators, operands);
+        cout << p << endl;
+        double n = limitPoz(p, operators, operands, stepsp);
         result = Equation(n, m, 1);
     }
     return result;
@@ -168,7 +187,7 @@ vector<Interv> interval(string s, stack<char> operators, stack<double> operands,
     }
     return result;
 }
-vector<Equation> verticalAsymptote(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps, double a, double b)
+vector<Equation> verticalAsymptotes(string s, stack<char> operators, stack<double> operands, vector<CalculationStep> steps, double a, double b)
 {
     vector<Equation> vec;
     vector<Interv> in = interval(s, operators, operands, steps, a, b);

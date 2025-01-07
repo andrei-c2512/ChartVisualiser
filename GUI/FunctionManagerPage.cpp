@@ -4,9 +4,8 @@
 
 
 
-void initFunctionBox(FunctionBox* box, sf::Vector2i pos, sf::Vector2i size) {
-	box->pos = pos;
-	box->size = size;
+void initFunctionBox(FunctionBox* box, sf::Rect<int> rect) {
+	box->rect = rect;
 	const int marg = 5;
 	box->margin = { marg , marg , marg , marg };
 
@@ -22,54 +21,60 @@ void initFunctionBox(FunctionBox* box, sf::Vector2i pos, sf::Vector2i size) {
 	sf::Vector2i btnSize(FunctionBox::buttonSize, FunctionBox::buttonSize);
 	const int textEditHeight = 30;
 
-	initTextEdit(&box->textEdit, sf::Vector2i(box->pos.x + box->margin.left, box->pos.y + box->margin.top),
-		sf::Vector2i(size.x - box->margin.left - box->margin.right, textEditHeight));
+	initTextEdit(&box->textEdit, sf::Vector2i(box->rect.left + box->margin.left, box->rect.top + box->margin.top),
+		sf::Vector2i(rect.width - box->margin.left - box->margin.right, textEditHeight));
 
 
-	initButton(&box->deleteBtn, sf::Vector2i(box->pos.x + box->size.x - box->margin.right - FunctionBox::buttonSize,
-		box->pos.y + textEditHeight + FunctionBox::buttonVerticalSpacing),
-		btnSize, Palette::deleteButtonPalette());
+	initButton(&box->deleteBtn, 
+		sf::Rect(sf::Vector2i(box->rect.left + box->rect.width - box->margin.right - FunctionBox::buttonSize,
+		box->rect.height + textEditHeight + FunctionBox::buttonVerticalSpacing),btnSize)
+		, Palette::deleteButtonPalette());
 
 	setButtonIcon(&box->deleteBtn, "GUI/Resources/deleteIcon32x32.png");
 	box->deleteBtn.drawCircle = true;
 
 	initButton(&box->randomFunctionBtn, 
-		sf::Vector2i(box->pos.x + box->margin.left, box->pos.y + textEditHeight + FunctionBox::buttonVerticalSpacing),
-		btnSize, Palette::randomButtonPalette());
-	setButtonIcon(&box->randomFunctionBtn, "GUI/Resources/diceIcon48x48.png");
+		sf::Rect(sf::Vector2i(box->rect.left + box->margin.left, box->rect.top + textEditHeight + FunctionBox::buttonVerticalSpacing),btnSize),
+		Palette::randomButtonPalette());
+	setButtonIcon(&box->randomFunctionBtn, "GUI/Resources/diceIcon32x32.png");
 
 	box->randomFunctionBtn.onClick = [box]() {
 		box->textEdit.text = getRandomFunction();
 		box->textEdit.done = true;
 	};
 
+	initButton(&box->detailsBtn, 
+		sf::Rect(sf::Vector2i(box->rect.left + box->margin.left * 2 + FunctionBox::buttonSize,
+			box->rect.top + textEditHeight + FunctionBox::buttonVerticalSpacing), btnSize), Palette::addButtonPalette());
+	setButtonIcon(&box->detailsBtn, "GUI/Resources/detailsIcon48x48.png");
 }
 void drawFunctionBox(sf::RenderWindow& window, FunctionBox* box) {
-	box->textEdit.pos.y = box->pos.y + box->margin.top;
+	box->textEdit.pos.y = box->rect.top + box->margin.top;
 	drawTextEdit(window, &box->textEdit);
 
 	const int verticalSpacing = 15;
-	const int adjustedY = box->pos.y + box->textEdit.size.y + verticalSpacing;
-	box->deleteBtn.pos.y = box->randomFunctionBtn.pos.y = adjustedY;
-
+	const int adjustedY = box->rect.top + box->textEdit.size.y + verticalSpacing;
+	box->deleteBtn.rect.top = box->randomFunctionBtn.rect.top = box->detailsBtn.rect.top = adjustedY;
+	
 	drawButton(window, &box->deleteBtn);
 	drawButton(window, &box->randomFunctionBtn);
+	drawButton(window, &box->detailsBtn);
 }
 
 int32_t getFunctionBoxHeight(FunctionBox* box) {
-	return box->deleteBtn.size.y + box->textEdit.size.y + FunctionBox::buttonVerticalSpacing;
+	return box->deleteBtn.rect.height + box->textEdit.size.y + FunctionBox::buttonVerticalSpacing;
 }
 
 void runFunctionBox(FunctionBox* box, const Mouse& mouse, const Keyboard& kb) {
 	runButton(&box->deleteBtn, mouse);
 	runButton(&box->randomFunctionBtn, mouse);
+	runButton(&box->detailsBtn, mouse);
 
 	runTextEdit(&box->textEdit, mouse, kb);
 }
 
-void initFunctionManagerPage(FunctionManagerPage* page, sf::Vector2i pos, sf::Vector2i size) {
-	page->pos = pos;
-	page->size = size;
+void initFunctionManagerPage(FunctionManagerPage* page, sf::Rect<int> rect) {
+	page->rect = rect;
 	const int m = 5;
 	page->margin = { m , m , m , m };
 
@@ -79,31 +84,39 @@ void initFunctionManagerPage(FunctionManagerPage* page, sf::Vector2i pos, sf::Ve
 	title.setFont(Palette::font());
 	title.setCharacterSize(40);
 	title.setFillColor(Palette::mainTextColor());
-	title.setPosition(SFHelper::toVec2f(pos));
+	title.setPosition(SFHelper::toVec2f(rect.getPosition()));
 	title.setString("Function manager");
 
-	const sf::Vector2i listPos = pos + sf::Vector2i(0, title.getLocalBounds().height + FunctionManagerPage::titleSpacing);
-	initFunctionBox(page->list[0] ,listPos , size);
+	const sf::Vector2i listPos = rect.getPosition() + sf::Vector2i(0, title.getLocalBounds().height + FunctionManagerPage::titleSpacing);
+	initFunctionBox(page->list[0] , sf::Rect(listPos , rect.getSize()));
 	FunctionBox* box = page->list[0];
+	box->id = 0;
 	box->funcColor = Palette::chartColor(0);
+	box->textEdit.text = getRandomFunction();
+	box->textEdit.text = "(x#(-11))*(sqr(x)*cos(23/x))+(x=(-11))*0";
+	box->textEdit.done = true;
 
 
 	sf::Vector2i s(FunctionManagerPage::buttonSize, FunctionManagerPage::buttonSize);
-	initButton(&page->addButton, pos, s , Palette::addButtonPalette());
+	initButton(&page->addButton, sf::Rect(rect.getPosition(), s), Palette::addButtonPalette());
 	setButtonIcon(&page->addButton, "GUI/Resources/addIcon48x48.png");
 	setOnClick(&page->addButton , [page]() {
 		FunctionBox* box = new FunctionBox;
+		//erasing the element
+		initFunctionBox(box, page->rect);
 		box->id = page->list.size();
 		box->funcColor = Palette::chartColor(box->id);
-		//erasing the element
-		initFunctionBox(box, page->pos, page->size);
+		box->textEdit.text = getRandomFunction();
+		box->textEdit.done = true;
 		page->list.emplace_back(box);
 	});
 
-	initButton(&page->loadFromFileBtn, sf::Vector2i(page->pos.x + page->margin.left, page->pos.y ),
-		s, Palette::loadFileButtonPalette());
-	setButtonIcon(&page->loadFromFileBtn, "GUI/Resources/loadIcon32x32.png");
-	page->loadFromFileBtn.drawCircle = true;
+	initButton(&page->saveToFileButton,
+		sf::Rect(sf::Vector2i(page->rect.left + page->margin.left, page->rect.top ),s),
+		Palette::loadFileButtonPalette());
+	setButtonIcon(&page->saveToFileButton, "GUI/Resources/loadIcon32x32.png");
+	page->saveToFileButton.drawCircle = true;
+
 }
 void destroyFunctionManagerPage(FunctionManagerPage* page) {
 	for (int32_t i = 0; i < page->list.size(); i++) {
@@ -112,8 +125,8 @@ void destroyFunctionManagerPage(FunctionManagerPage* page) {
 }
 void runFunctionManagerPage(FunctionManagerPage* page, const Mouse& mouse , const Keyboard& kb) {
 	for (int32_t i = 0; i < page->list.size(); i++) {
-		bool pressed = page->list[i]->deleteBtn.state == ViewState::PRESSED;
-		if (pressed) {
+		bool deletePressed = page->list[i]->deleteBtn.state == ViewState::PRESSED;
+		if (deletePressed) {
 			page->list.erase(page->list.begin() + page->list[i]->id);
 			//updating the indexes cuz otherwise it might crash/delete the wrong buttons
 			for (int32_t i = 0; i < page->list.size(); i++) {
@@ -124,26 +137,27 @@ void runFunctionManagerPage(FunctionManagerPage* page, const Mouse& mouse , cons
 	for (int32_t i = 0; i < page->list.size(); i++) {
 		runFunctionBox(page->list[i], mouse, kb);
 	}
+
 	runButton(&page->addButton , mouse);
-	runButton(&page->loadFromFileBtn, mouse);
+	runButton(&page->saveToFileButton, mouse);
 }
 void drawFunctionManagerPage(sf::RenderWindow& window, FunctionManagerPage* page) {
 	window.draw(page->title);
 
-	int32_t newHeight = page->pos.y + page->title.getLocalBounds().height + 
+	int32_t newHeight = page->rect.top+ page->title.getLocalBounds().height + 
 		FunctionManagerPage::titleSpacing;
 	for (int32_t i = 0; i < page->list.size(); i++) {
-		page->list[i]->pos.y = newHeight;
+		page->list[i]->rect.top = newHeight;
 		drawFunctionBox(window , page->list[i]);
 		newHeight += getFunctionBoxHeight(page->list[i]);
 	}
-	page->addButton.pos.y = newHeight + page->pos.y + FunctionManagerPage::functionalitySpacing;
+	page->addButton.rect.top = newHeight + page->rect.top + FunctionManagerPage::functionalitySpacing;
 	drawButton(window, &page->addButton);
 
-	page->loadFromFileBtn.pos.y = page->addButton.pos.y;
+	page->saveToFileButton.rect.top = page->addButton.rect.top;
 	const int btnSpacing = 5;
-	page->loadFromFileBtn.pos.x = page->addButton.pos.x + FunctionManagerPage::buttonSize + btnSpacing;
-	drawButton(window, &page->loadFromFileBtn);
+	page->saveToFileButton.rect.left = page->addButton.rect.left + FunctionManagerPage::buttonSize + btnSpacing;
+	drawButton(window, &page->saveToFileButton);
 }
 
 bool chartNeedsUpdate(FunctionManagerPage* page) {
@@ -163,7 +177,7 @@ std::vector<FunctionString> getFunctionList(FunctionManagerPage* page) {
 
 	for (int32_t i = 0; i < page->list.size(); i++) {
 		FunctionString funcStr;
-		funcStr.funcStr = page->list[i]->textEdit.text;
+		funcStr.funcStr = funcStr.unprocessedFunc = page->list[i]->textEdit.text;
 		initFunc(funcStr.funcStr);
 		if (page->list[i]->textEdit.done) {
 			funcStr.needsUpdate = true;
@@ -177,3 +191,18 @@ std::vector<FunctionString> getFunctionList(FunctionManagerPage* page) {
 	return vec;
 }
 
+
+int detailsButtonPressed(FunctionManagerPage* page) {
+	for (int32_t i = 0; i < page->list.size(); i++) {
+		bool detailsPressed = page->list[i]->detailsBtn.state == ViewState::PRESSED;
+		if (detailsPressed) {
+			page->list[i]->detailsBtn.state = ViewState::NONE;
+			return i;
+		}
+	}
+	return -1;
+}
+
+bool saveToFilePressed(FunctionManagerPage* page) {
+	return page->saveToFileButton.state == ViewState::PRESSED;
+}

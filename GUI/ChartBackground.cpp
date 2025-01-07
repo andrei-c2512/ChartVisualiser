@@ -3,23 +3,25 @@
 #include "Palette.h"
 
 
-void initChartBackground(ChartBackground* background , int x , int y , Size size0){
-    background->x = x;
-    background->y = y;
+void initChartBackground(ChartBackground* background , sf::Rect<int> rect){
+    background->rect = rect;
 
     background->offsetX = 0;
     background->offsetY = 0;
 
     background->zoom = 1.0f;
-    background->s = size0;
 
     background->rectSizeBase = {int(CHART_UNIT_SIZE) , int(CHART_UNIT_SIZE)};
     background->rectSizeCurrent = background->rectSizeBase;
 
 }
+
+void setChartBackgroundRect(ChartBackground* background, sf::Rect<int> rect) {
+    background->rect = rect;
+}
 void drawChartBackground(sf::RenderWindow& window, ChartBackground* background){
-    int startX = background->x;
-    int startY = background->y;
+    double startX = background->rect.left;
+    double startY = background->rect.top;
 
     bool multithreading = false;
     if(multithreading){
@@ -30,35 +32,38 @@ void drawChartBackground(sf::RenderWindow& window, ChartBackground* background){
         sf::RectangleShape rect;
         rect.setFillColor(Palette::mainBackgroundColor());
         rect.setPosition(startX, startY);
-        rect.setSize(sf::Vector2f(background->s.width, background->s.height));
+        rect.setSize(sf::Vector2f(background->rect.width, background->rect.height));
     }
 
 
-    int xLeft , xRight;
-    int yTop , yBottom;
+    double xLeft , xRight;
+    double yTop , yBottom;
 
 
-    int offsetX = float(background->offsetX) * background->zoom;
-    int offsetY = float(background->offsetY) * background->zoom;
+    double offsetX = *background->offsetX * background->zoom;
+    double offsetY = *background->offsetY * background->zoom;
 
-    if(offsetX >= 0){
-        xLeft = startX + background->s.width / 2 - (offsetX) % background->rectSizeCurrent.width;
-        xRight = startX + background->s.width / 2 + (background->rectSizeCurrent.width - (offsetX) % background->rectSizeCurrent.width);
+    double addX = background->rectSizeCurrent.x * multiplierByZoom(background->zoom);
+    double addY = background->rectSizeCurrent.y * multiplierByZoom(background->zoom);
+
+    if (offsetX >= 0) {
+        xLeft = startX + background->rect.width / 2 - fmod(offsetX, addX);
+        xRight = startX + background->rect.width / 2 + (addX - fmod(offsetX, addX));
     }
     else
     {
-        xLeft = startX + background->s.width / 2 - (background->rectSizeCurrent.width - (-offsetX) % background->rectSizeCurrent.width);
-        xRight = startX + background->s.width / 2 + (-offsetX) % background->rectSizeCurrent.width;
+        xLeft = startX + background->rect.width / 2 - (addX - fmod(-offsetX, addX));
+        xRight = startX + background->rect.width / 2 + fmod(-offsetX, addX);
     }
 
 
-    if(offsetY <= 0){
-        yTop = startY + background->s.height / 2 + (background->rectSizeCurrent.height - (offsetY) % background->rectSizeCurrent.height);
-        yBottom = startY + background->s.height / 2 -(offsetY) % background->rectSizeCurrent.height;
+    if (offsetY <= 0) {
+        yTop = startY + background->rect.height / 2.0 + (addY - fmod(offsetY, addY));
+        yBottom = startY + background->rect.height / 2 - fmod(offsetY, addY);
     }
-    else{
-        yTop = startY + background->s.height / 2 + (-offsetY) % background->rectSizeCurrent.height;
-        yBottom = startY + background->s.height / 2 - (background->rectSizeCurrent.height - (-offsetY) % background->rectSizeCurrent.height);
+    else {
+        yTop = startY + background->rect.height / 2.0 + fmod(-offsetY, addY);
+        yBottom = startY + background->rect.height / 2.0 - (addY - fmod(-offsetY, addY));
     }
     /*setcolor(BLACK);
     for( ; x < background->x + background->s.width ; x += background->rectSizeCurrent.width){
@@ -79,30 +84,30 @@ void drawChartBackground(sf::RenderWindow& window, ChartBackground* background){
     }
     else
     {
-        for(; xLeft > startX ; xLeft -= background->rectSizeCurrent.width){
-            line(xLeft, startY, xLeft, startY + background->s.height);
+        for(; xLeft > startX ; xLeft -= addX){
+            line(xLeft, startY, xLeft, startY + background->rect.height);
         }
-        for( ; xRight < background->x + background->s.width ; xRight += background->rectSizeCurrent.width){
-            line(xRight, startY, xRight, startY + background->s.height);
+        for( ; xRight < background->rect.left + background->rect.width ; xRight += addX){
+            line(xRight, startY, xRight, startY + background->rect.height);
         }
 
         //drawing the horizontal lines
 
-        for( ; yTop > startY ; yTop -= background->rectSizeCurrent.height){
-            line(startX  , yTop , startX + background->s.width , yTop);
+        for( ; yTop > startY ; yTop -= addY){
+            line(startX  , yTop , startX + background->rect.width , yTop);
         }
 
-        for( ; yBottom < startY + background->s.height ; yBottom += background->rectSizeCurrent.height){
-            line(startX  , yBottom , startX + background->s.width , yBottom);
+        for( ; yBottom < startY + background->rect.height ; yBottom += addY){
+            line(startX  , yBottom , startX + background->rect.width , yBottom);
         }
     }
 
 }
-void setChartBackgroundZoom(ChartBackground* background , float zoom){
+void setChartBackgroundZoom(ChartBackground* background , double zoom){
     if(!(zoom > MIN_ZOOM && zoom < MAX_ZOOM))
         return;
 
     background->zoom = zoom;
-    background->rectSizeCurrent.width = background->rectSizeBase.width * zoom;
-    background->rectSizeCurrent.height = background->rectSizeBase.height * zoom;
+    background->rectSizeCurrent.x = double(background->rectSizeBase.x) * zoom;
+    background->rectSizeCurrent.y = double(background->rectSizeBase.y) * zoom;
 }
