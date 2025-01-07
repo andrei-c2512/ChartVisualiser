@@ -63,7 +63,8 @@ void runChart(Chart* chart, const Mouse& mouse){
         }
     }
 
-    chart->animation->pos = SFHelper::toVec2f(chartToScreenPos(*chart, chart->highlightedPoint));
+    if(chart->animation)
+        chart->animation->pos = SFHelper::toVec2f(chartToScreenPos(*chart, chart->highlightedPoint));
 }
 void drawChart(sf::RenderWindow& window, Chart* chart){
     initDrawingContext(chart);
