@@ -13,7 +13,7 @@ void initHelpPage(HelpPage* page, sf::Rect<int> rect) {
 
 
 
-	auto posList = getAlignedPositions(rect, 2, sf::Vector2i(160, 160));
+	auto posList = getAlignedPositionsX(rect, 2, sf::Vector2i(160, 160));
 
 	if (!page->mouseLeftTexture.loadFromFile("GUI/Resources/mouseLeft160x160.png"))
 		std::cout << "Failed to load image in help page";

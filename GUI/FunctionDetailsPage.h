@@ -4,6 +4,8 @@
 #include "../Tools.h"
 #include "PointNavigator.h"
 #include "OptionBarLogic.h"
+#include "IntegralCalculator.h"
+
 
 struct AsymptoteSection {
 	sf::Text header;
@@ -42,6 +44,8 @@ struct FunctionDetailsPage {
 	Button minPointsButton;
 	Button maxPointsButton;
 
+	IntegralCalculator* integralCalculator;
+	
 	static constexpr int32_t subSettingsBtnSize = 48;
 	static constexpr int32_t subSettingsHeight = 64;
 	static constexpr int32_t endSettingsRadius = 32;
@@ -54,3 +58,4 @@ void updateDomain(FunctionDetailsPage* page);
 void updateInformation(FunctionDetailsPage* page);
 Domain getDomain(FunctionDetailsPage* page);
 void drawFunctionDetailsPage(sf::RenderWindow& window, FunctionDetailsPage* page);
+void freeMem(FunctionDetailsPage* page);

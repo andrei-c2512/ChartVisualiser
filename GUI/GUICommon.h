@@ -37,6 +37,9 @@ enum Options {
 
 sf::Rect<int> adjustRectToMargins(const sf::Rect<int>& rect , const Margins& margin);
 int horizontalSizeByStretchFactor(int width , int segments , int stretch);
-std::vector<sf::Vector2i> getAlignedPositions(const sf::Rect<int>& rect, int items , const sf::Vector2i& itemSize);
-int32_t getCenteredX(int32_t x, int32_t width, int32_t itemWidth) noexcept;
+std::vector<sf::Vector2i> getAlignedPositionsX(const sf::Rect<int>& rect, int items , const sf::Vector2i& itemSize);
+std::vector<sf::Vector2i> getAlignedPositionsY(const sf::Rect<int>& rect, int items, const sf::Vector2i& itemSize);
+std::vector<sf::Vector2i> getDispersedPositionY(const sf::Rect<int>& rect, int items, const sf::Vector2i& itemSize);
+sf::Vector2f topRight(const sf::Text& text);
+int32_t getCentered(int32_t x, int32_t width, int32_t itemWidth) noexcept;
 double multiplierByZoom(double zoom);

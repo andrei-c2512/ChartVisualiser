@@ -24,7 +24,7 @@ struct TextEdit {
 	int32_t bugGuard = 30;
 	bool done = false;
 
-	std::function<bool(char)> charFilter = [](char ch) { return true; };
+	std::function<bool(TextEdit& , char)> charFilter = [](TextEdit& t , char ch) { return true; };
 };
 
 void initTextEdit(TextEdit* edit, sf::Vector2i pos, sf::Vector2i size);

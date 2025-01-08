@@ -9,7 +9,7 @@ void initPointNavigator(PointNavigator* navigator,sf::Rect<int> rect) {
 
 	const int spacing = 10; 
 	initButton(&navigator->btnUp, 
-		sf::Rect(sf::Vector2i(getCenteredX(rect.left, rect.width, btnSize.x), rect.getPosition().y), btnSize), Palette::navigationButtonPalette());
+		sf::Rect(sf::Vector2i(getCentered(rect.left, rect.width, btnSize.x), rect.getPosition().y), btnSize), Palette::navigationButtonPalette());
 	setButtonIcon(&navigator->btnUp, "GUI/Resources/goUpIcon48x48.png");
 	rect.top += PointNavigator::btnSize + spacing;
 
@@ -22,7 +22,7 @@ void initPointNavigator(PointNavigator* navigator,sf::Rect<int> rect) {
 	rect.top += PointNavigator::btnSize + spacing;
 
 	initButton(&navigator->btnDown, 
-		sf::Rect(sf::Vector2i(getCenteredX(rect.left , rect.width , btnSize.x) , rect.getPosition().y) , btnSize), 
+		sf::Rect(sf::Vector2i(getCentered(rect.left , rect.width , btnSize.x) , rect.getPosition().y) , btnSize), 
 		Palette::navigationButtonPalette());
 	setButtonIcon(&navigator->btnDown, "GUI/Resources/goDownIcon48x48.png");
 

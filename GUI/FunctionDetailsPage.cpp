@@ -64,9 +64,9 @@ void initFunctionDetailsPage(FunctionDetailsPage* page, sf::Rect<int> rect) {
 		sf::Vector2i(startX + headerDomain.getLocalBounds().width + domainEditHorizontalPadding, startY + 6) ,
 		sf::Vector2i(rect.width - listContentPadding - headerDomain.getLocalBounds().width - 3 * domainEditHorizontalPadding, domainEditHeight));
 
-	domainEdit.charFilter = [page](char ch) {
+	domainEdit.charFilter = [](TextEdit& t ,char ch) {
 		//the first character should always be a type of parantheses
-		auto& domainEdit = page->domainView.domainEdit;
+		auto& domainEdit = t;
 		std::string_view content = domainEdit.text;
 
 		//this algorhitm is so shit fr fr i dont like this yandere dev type shit
@@ -92,7 +92,7 @@ void initFunctionDetailsPage(FunctionDetailsPage* page, sf::Rect<int> rect) {
 		if (ch == '`') {
 			if (content.back() == 'f')
 			{
-				page->domainView.domainEdit.text.resize(content.size() - 3);
+				t.text.resize(content.size() - 3);
 				return false;
 			}
 			return true;
@@ -103,7 +103,7 @@ void initFunctionDetailsPage(FunctionDetailsPage* page, sf::Rect<int> rect) {
 		if (content.size() == 1) {
 			if (ch == 'i')
 			{
-				page->domainView.domainEdit.text.append("inf");
+				t.text.append("inf");
 				return false;
 			}
 			else
@@ -111,7 +111,7 @@ void initFunctionDetailsPage(FunctionDetailsPage* page, sf::Rect<int> rect) {
 		}
 		else if (content.back() == '-') {
 			if (ch == 'i') {
-				page->domainView.domainEdit.text.append("inf");
+				t.text.append("inf");
 				return false;
 			}
 			else
@@ -119,7 +119,7 @@ void initFunctionDetailsPage(FunctionDetailsPage* page, sf::Rect<int> rect) {
 		}
 		else if (content.back() == ',') {
 			if (ch == 'i') {
-				page->domainView.domainEdit.text.append("inf");
+				t.text.append("inf");
 				return false;
 			}
 			else
@@ -177,7 +177,7 @@ void initFunctionDetailsPage(FunctionDetailsPage* page, sf::Rect<int> rect) {
 	page->subSettingsBarEnd.setOutlineThickness(5.0f);
 
 	sf::Vector2i minMaxBtnSize(FunctionDetailsPage::subSettingsBtnSize, FunctionDetailsPage::subSettingsBtnSize);
-	auto positionList = getAlignedPositions(
+	auto positionList = getAlignedPositionsX(
 		sf::Rect(startX, startY, rect.width - FunctionDetailsPage::endSettingsRadius, FunctionDetailsPage::subSettingsHeight), 2, minMaxBtnSize);
 
 
@@ -197,7 +197,9 @@ void initFunctionDetailsPage(FunctionDetailsPage* page, sf::Rect<int> rect) {
 	initPointNavigator(&page->pointNavigator, sf::Rect(sf::Vector2i(rect.left, startY),
 		rect.getSize()));
 
-	startY += barSpacing;
+	startY = page->pointNavigator.btnDown.rect.top + page->pointNavigator.btnDown.rect.height;
+
+	page->integralCalculator = createIntegralCalculator(sf::Rect(startX, startY, rect.width, 200));
 }
 
 void updateDomain(FunctionDetailsPage* page) {
@@ -264,6 +266,8 @@ void runFunctionDetailsPage(FunctionDetailsPage* page, const Mouse& mouse, const
 	else if (page->minPointsButton.state == ViewState::SELECTED) {
 		setList(page->pointNavigator, &SharedData::funcList[page->index].minPoints);
 	}
+
+	runIntegralCalculator(*page->integralCalculator, mouse, kb , SharedData::funcList[page->index]);
 }
 void drawFunctionDetailsPage(sf::RenderWindow& window, FunctionDetailsPage* page) {
 	const auto& funcList = SharedData::funcList;
@@ -315,6 +319,8 @@ void drawFunctionDetailsPage(sf::RenderWindow& window, FunctionDetailsPage* page
 
 	drawButton(window, &page->minPointsButton);
 	drawButton(window, &page->maxPointsButton);
+
+	drawIntegralCalculator(window, *page->integralCalculator);
 }
 
 void updateInformation(FunctionDetailsPage* page) {
@@ -349,4 +355,8 @@ void updateInformation(FunctionDetailsPage* page) {
 
 		page->indexChanged = false;
 	}
+}
+
+void freeMem(FunctionDetailsPage* page) {
+	delete page->integralCalculator;
 }

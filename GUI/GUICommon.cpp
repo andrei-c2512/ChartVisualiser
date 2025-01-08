@@ -14,7 +14,7 @@ int horizontalSizeByStretchFactor(int totalSize , int segments , int stretch){
     return int(segmentW * float(stretch));
 }
 
-std::vector<sf::Vector2i> getAlignedPositions(const sf::Rect<int>& rect, int items , const sf::Vector2i& itemSize) {
+std::vector<sf::Vector2i> getAlignedPositionsX(const sf::Rect<int>& rect, int items , const sf::Vector2i& itemSize) {
 	std::vector<sf::Vector2i> list(items);
 	int spacingY = (rect.height - itemSize.y) / 2;
 	int spacingX = (rect.width - items * itemSize.x) / (items + 1);
@@ -30,8 +30,46 @@ std::vector<sf::Vector2i> getAlignedPositions(const sf::Rect<int>& rect, int ite
 	return list;
 }
 
-int32_t getCenteredX(int32_t x, int32_t width, int32_t itemWidth) noexcept {
+std::vector<sf::Vector2i> getAlignedPositionsY(const sf::Rect<int>& rect, int items, const sf::Vector2i& itemSize) {
+    std::vector<sf::Vector2i> list(items);
+    int spacingX = (rect.width - itemSize.x) / 2;
+    int spacingY = (rect.height - items * itemSize.y) / (items + 1);
+
+    int startX = spacingX;
+    int startY = spacingY;
+    for (sf::Vector2i& point : list) {
+        point.x = startX + rect.left;
+        point.y = startY + rect.top;
+
+        startY += spacingY + itemSize.y;
+    }
+    return list;
+}
+
+int32_t getCentered(int32_t x, int32_t width, int32_t itemWidth) noexcept {
     return x + (width - itemWidth) / 2;
+}
+
+std::vector<sf::Vector2i> getDispersedPositionY(const sf::Rect<int>& rect, int items, const sf::Vector2i& itemSize) {
+    std::vector<sf::Vector2i> list(items);
+    int spacingX = (rect.width - itemSize.x) / 2;
+    int spacingY = (rect.height - items * itemSize.y) / (items - 1);
+
+    int startX = spacingX;
+    int startY = 0;
+
+    for (sf::Vector2i& point : list) {
+        point.x = startX + rect.left;
+        point.y = startY + rect.top;
+
+        startY += spacingY + itemSize.y;
+    }
+
+    return list;
+}
+
+sf::Vector2f topRight(const sf::Text& text) {
+    return sf::Vector2f(text.getPosition() + sf::Vector2f(text.getLocalBounds().width, 0));
 }
 double multiplierByZoom(double zoom) {
     if (zoom < 0.005f) {
@@ -81,3 +119,4 @@ double multiplierByZoom(double zoom) {
 
     return 0.05;
 }
+

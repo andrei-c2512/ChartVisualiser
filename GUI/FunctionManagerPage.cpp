@@ -114,7 +114,7 @@ void initFunctionManagerPage(FunctionManagerPage* page, sf::Rect<int> rect) {
 	initButton(&page->saveToFileButton,
 		sf::Rect(sf::Vector2i(page->rect.left + page->margin.left, page->rect.top ),s),
 		Palette::loadFileButtonPalette());
-	setButtonIcon(&page->saveToFileButton, "GUI/Resources/loadIcon32x32.png");
+	setButtonIcon(&page->saveToFileButton, "GUI/Resources/pictureIcon32x32.png");
 	page->saveToFileButton.drawCircle = true;
 
 }

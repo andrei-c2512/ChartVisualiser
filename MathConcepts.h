@@ -41,7 +41,10 @@ struct Domain {
 };
 
 bool withinDomain(const Domain& domain, float x) noexcept;
+//returns max number on invalid conversion
+float floatNumber(std::string_view str);
 std::string toString(const Domain& domain) noexcept;
+bool digit(char ch) noexcept;
 std::string toString(const Equation& eq) noexcept;
 std::string toString(float num, int precision) noexcept;
 std::string toString(const sf::Vector2f& point) noexcept;

@@ -22,7 +22,7 @@ void initOptionTab(OptionTab* tab, sf::Rect<int> rect) {
 
 	setButtonIcon(list[Options::FunctionList], "GUI/Resources/functionIcon64x60.png");
 	setButtonIcon(list[Options::Analysis]    , "GUI/Resources/analysisIcon64x64.png");
-	setButtonIcon(list[Options::Integral]    , "GUI/Resources/integralIcon64x64.png");
+	setButtonIcon(list[Options::Integral]    , "GUI/Resources/settingsIcon64x64.png");
 
 	list[Options::Help]->rect.top = rect.top + rect.height - baseHeight;
 	list[Options::Help]->rect.left = tab->rect.left - 3;

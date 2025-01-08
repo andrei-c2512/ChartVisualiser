@@ -24,9 +24,6 @@ void initChart(Chart* chart ,sf::Rect<int> rect){
     chart->pointDetails.setFont(Palette::font());
     chart->pointDetails.setFillColor(Palette::mainTextColor());
     chart->pointDetails.setCharacterSize(20);
-
-    setChartPos(*chart, sf::Vector2f(5, 5));
-    highlightPoint(*chart, sf::Vector2f(0, 0));
 }
 
 
@@ -64,7 +61,7 @@ void runChart(Chart* chart, const Mouse& mouse){
     }
 
     if(chart->animation)
-        chart->animation->pos = SFHelper::toVec2f(chartToScreenPos(*chart, chart->highlightedPoint));
+     chart->animation->pos = SFHelper::toVec2f(chartToScreenPos(*chart, chart->highlightedPoint));
 }
 void drawChart(sf::RenderWindow& window, Chart* chart){
     initDrawingContext(chart);

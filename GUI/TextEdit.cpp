@@ -17,7 +17,7 @@ void initTextEdit(TextEdit* edit, sf::Vector2i pos, sf::Vector2i size) {
 void runTextEdit(TextEdit* edit, const Mouse& mouse ,const Keyboard& kb) {
 
 	float f = kb.clock.getElapsedTime().asSeconds();
-	if (edit->selected && kb.keyPressed && kb.samePoll && !kb.usedKey && edit->charFilter(kb.lastKey)) {
+	if (edit->selected && kb.keyPressed && kb.samePoll && !kb.usedKey && edit->charFilter(*edit , kb.lastKey)) {
 		switch (kb.lastKey) {
 		case '`':
 				if (edit->text.empty() == false)
@@ -107,9 +107,11 @@ void drawTextEdit(sf::RenderWindow& window, TextEdit* edit){
 		}
 		else {
 			int before = mid;
-			while (edit->text[mid] != ' ' && mid >= 0) {
+			while (mid >= 0 && edit->text[mid] != ' ') {
 				mid--;
 			}
+			if (mid == 0)
+				break;
 			if (mid <= lastIt)
 				mid = before;
 		}

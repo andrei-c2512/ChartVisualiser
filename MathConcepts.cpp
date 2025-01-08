@@ -68,5 +68,19 @@ std::string toString(float num, int precision) noexcept {
 }
 
 std::string toString(const sf::Vector2f& point) noexcept {
-	return toString(point.x, 2) + "," + toString(point.y, 2);
+	return toString(point.x, 2) + " , " + toString(point.y, 2);
+}
+
+float floatNumber(std::string_view str) {
+	try {
+		float res = std::stof(str.data());
+		return res;
+	}
+	catch (const std::invalid_argument& argument) {
+		return std::numeric_limits<float>::max();
+	}
+}
+
+bool digit(char ch) noexcept {
+	return ch >= '0' && ch <= '9';
 }
