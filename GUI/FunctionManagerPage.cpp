@@ -49,7 +49,7 @@ void initFunctionBox(FunctionBox* box, sf::Rect<int> rect) {
 			box->rect.top + textEditHeight + FunctionBox::buttonVerticalSpacing), btnSize), Palette::addButtonPalette());
 	setButtonIcon(&box->detailsBtn, "GUI/Resources/detailsIcon48x48.png");
 
-	box->errorMessage.setCharacterSize(12);
+	box->errorMessage.setCharacterSize(16);
 	box->errorMessage.setFillColor(Palette::highlightColor());
 	box->errorMessage.setFont(Palette::font());
 	box->errorMessage.setPosition(SFHelper::toVec2f(topRight(box->detailsBtn.rect)) - sf::Vector2f(0 , 15));
