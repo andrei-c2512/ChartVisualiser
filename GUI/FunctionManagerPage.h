@@ -14,15 +14,17 @@ struct FunctionBox {
 
 	sf::Text formatMessage;
 	sf::Color funcColor;
+	sf::Text errorMessage;
 
 	int32_t id = 0;
-	static constexpr int32_t buttonVerticalSpacing = 15;
+	static constexpr int32_t buttonVerticalSpacing = 30;
 	static constexpr int32_t buttonSize = 48;
 };
 
 void initFunctionBox(FunctionBox* box, sf::Rect<int> rect);
 void drawFunctionBox(sf::RenderWindow& window, FunctionBox* box);
 void runFunctionBox(FunctionBox* box, const Mouse& mouse, const Keyboard& kb);
+void validateString(FunctionBox& box);
 int32_t getFunctionBoxHeight(FunctionBox* box);
 
 struct FunctionList {

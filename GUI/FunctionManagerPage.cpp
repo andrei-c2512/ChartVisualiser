@@ -1,6 +1,7 @@
 #include "FunctionManagerPage.h"
 #include "SFHelper.h"
 #include "../RandomFunction.h"
+#include "../Validation.h"
 
 
 
@@ -47,6 +48,11 @@ void initFunctionBox(FunctionBox* box, sf::Rect<int> rect) {
 		sf::Rect(sf::Vector2i(box->rect.left + box->margin.left * 2 + FunctionBox::buttonSize,
 			box->rect.top + textEditHeight + FunctionBox::buttonVerticalSpacing), btnSize), Palette::addButtonPalette());
 	setButtonIcon(&box->detailsBtn, "GUI/Resources/detailsIcon48x48.png");
+
+	box->errorMessage.setCharacterSize(12);
+	box->errorMessage.setFillColor(Palette::highlightColor());
+	box->errorMessage.setFont(Palette::font());
+	box->errorMessage.setPosition(SFHelper::toVec2f(topRight(box->detailsBtn.rect)) - sf::Vector2f(0 , 15));
 }
 void drawFunctionBox(sf::RenderWindow& window, FunctionBox* box) {
 	box->textEdit.pos.y = box->rect.top + box->margin.top;
@@ -59,18 +65,57 @@ void drawFunctionBox(sf::RenderWindow& window, FunctionBox* box) {
 	drawButton(window, &box->deleteBtn);
 	drawButton(window, &box->randomFunctionBtn);
 	drawButton(window, &box->detailsBtn);
+	window.draw(box->errorMessage);
 }
 
 int32_t getFunctionBoxHeight(FunctionBox* box) {
 	return box->deleteBtn.rect.height + box->textEdit.size.y + FunctionBox::buttonVerticalSpacing;
 }
 
+void validateString(FunctionBox& box) {
+	std::string str = box.textEdit.text;
+	StatusCode result = validate(str);
+
+	std::string message;
+	switch (result) {
+	case StatusCode::OK:
+		break;
+	case StatusCode::EMPTY_PARENTHESES:
+		message = "Please provide parantheses";
+		break;
+	case StatusCode::INCORRECT_PARENTHESES:
+		message = "Please format the parantheses correctly";
+		break;
+	case StatusCode::INVALID_BINARY_OPERATION:
+		message = "Please use a valid operation";
+		break;
+	case StatusCode::INVALID_NUMBER:
+		message = "Invalid number";
+		break;
+	case StatusCode::SYNTAX_ERROR:
+		message = "Equation not formated correctly";
+		break;
+	case StatusCode::MISSING_UNARY_PARENTHESIS:
+		message = "Missing parantheses";
+		break;
+	case StatusCode::INVALID_CHARACTER:
+		message = "Found out of place character";
+		break;
+	}
+	box.errorMessage.setString(message);
+
+	if (result != StatusCode::OK) {
+		box.textEdit.done = false;
+	}
+}
 void runFunctionBox(FunctionBox* box, const Mouse& mouse, const Keyboard& kb) {
 	runButton(&box->deleteBtn, mouse);
 	runButton(&box->randomFunctionBtn, mouse);
 	runButton(&box->detailsBtn, mouse);
 
 	runTextEdit(&box->textEdit, mouse, kb);
+	//this function cancels the effect of enter
+	validateString(*box);
 }
 
 void initFunctionManagerPage(FunctionManagerPage* page, sf::Rect<int> rect) {

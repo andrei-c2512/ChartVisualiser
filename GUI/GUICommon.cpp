@@ -71,6 +71,9 @@ std::vector<sf::Vector2i> getDispersedPositionY(const sf::Rect<int>& rect, int i
 sf::Vector2f topRight(const sf::Text& text) {
     return sf::Vector2f(text.getPosition() + sf::Vector2f(text.getLocalBounds().width, 0));
 }
+
+
+
 double multiplierByZoom(double zoom) {
     if (zoom < 0.005f) {
         return 2500.0;

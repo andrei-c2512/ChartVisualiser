@@ -41,5 +41,16 @@ std::vector<sf::Vector2i> getAlignedPositionsX(const sf::Rect<int>& rect, int it
 std::vector<sf::Vector2i> getAlignedPositionsY(const sf::Rect<int>& rect, int items, const sf::Vector2i& itemSize);
 std::vector<sf::Vector2i> getDispersedPositionY(const sf::Rect<int>& rect, int items, const sf::Vector2i& itemSize);
 sf::Vector2f topRight(const sf::Text& text);
+
+template<typename T>
+sf::Vector2<T> bottomLeft(const sf::Vector2<T>& pos, const sf::Vector2<T>& size) noexcept {
+    return sf::Vector2<T>(pos.x, pos.y + size.y);
+}
+
+template<typename T>
+sf::Vector2<T> topRight(const sf::Rect<T> rect) noexcept {
+    return sf::Vector2<T>(rect.left + rect.width , rect.top);
+}
 int32_t getCentered(int32_t x, int32_t width, int32_t itemWidth) noexcept;
 double multiplierByZoom(double zoom);
+
