@@ -1,0 +1,760 @@
+﻿  FunctionProcessor.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\FunctionProcessor.cpp(63,17): warning C4267: 'initializing': conversion from 'size_t' to 'int8_t', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\FunctionProcessor.cpp(286,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\FunctionProcessor.cpp(329,52): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\FunctionProcessor.cpp(345,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\FunctionProcessor.cpp(380,52): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\FunctionProcessor.cpp(394,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\FunctionProcessor.cpp(450,52): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Button.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Button.cpp(11,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Button.cpp(12,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Button.cpp(101,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Chart.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Chart.cpp(54,100): warning C4244: 'argument': conversion from 'int32_t' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Chart.cpp(54,100): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Chart.cpp(54,100): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Chart.cpp(54,100): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Chart.cpp(54,100): warning C4244:         ]
+  ChartBackground.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(34,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(34,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,75): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,75): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,75): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,75): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,75): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,75): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,75): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,75): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,75): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,51): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,51): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,51): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,51): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,51): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,51): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,51): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,51): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(35,51): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,45): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,45): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,45): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,45): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,45): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,41): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,41): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,41): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(78,41): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,46): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,46): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,46): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,46): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,41): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,41): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,41): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(79,41): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(90,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(90,33): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(90,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(90,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(93,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(93,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(93,26): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(93,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(99,69): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(99,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(99,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(99,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(103,72): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(103,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(103,28): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartBackground.cpp(103,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  ChartDrawing.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(18,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(19,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(33,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(36,54): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(36,54): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(36,54): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(36,54): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(36,54): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(36,54): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(36,54): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(36,54): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(36,54): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,66): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,66): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,66): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,66): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,66): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,66): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,66): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,66): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,66): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,50): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,50): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,50): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,50): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(37,50): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,34): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,34): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,34): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,34): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,29): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,29): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,29): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(58,29): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,34): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,34): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,34): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,34): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,29): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,29): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,29): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(59,29): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(69,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(79,56): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(79,42): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(80,56): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(80,42): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(101,43): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(101,43): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(101,43): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(101,43): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(101,43): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,108): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,108): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,108): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,108): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,108): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,108): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,108): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,108): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,108): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,89): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,89): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,89): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,89): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,89): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,89): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,89): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,89): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,89): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,72): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,72): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,72): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,72): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,72): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,72): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,72): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,72): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,72): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,54): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,54): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,54): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,54): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,54): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,54): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,54): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,54): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(126,54): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(150,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(150,27): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(151,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(151,27): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(152,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(152,27): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(180,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(183,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(196,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(196,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(200,79): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(200,62): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(200,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(200,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(202,24): warning C4244: '+=': conversion from 'const double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,41): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,41): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,41): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,41): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,37): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,37): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,37): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,37): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(209,37): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,42): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,42): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,42): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,42): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,37): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,37): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,37): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,37): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(210,37): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(217,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(217,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(218,117): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(218,56): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(219,117): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(219,56): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(245,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(252,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(253,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(256,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(259,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(259,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(263,59): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(263,51): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(263,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(263,26): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartDrawing.cpp(277,33): warning C4244: 'argument': conversion from 'const int32_t' to 'float', possible loss of data
+  ChartLogic.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(66,38): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(66,38): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(66,38): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(66,38): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(66,38): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(80,91): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(80,91): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(80,91): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(80,91): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(80,91): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(79,107): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(79,107): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(79,107): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(79,107): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(79,107): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(86,87): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(86,87): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(86,87): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(86,87): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(86,87): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(85,103): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(85,103): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(85,103): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(85,103): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartLogic.cpp(85,103): warning C4244:         ]
+  ChartView.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(16,31): warning C4244: '=': conversion from 'double' to 'int32_t', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(17,31): warning C4244: '=': conversion from 'double' to 'int32_t', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(53,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(58,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(78,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(82,24): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(82,24): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(82,24): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(82,24): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(82,24): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(81,25): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(81,25): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(81,25): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(81,25): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(81,25): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(86,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(86,46): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(86,46): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(86,46): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(86,46): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(85,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(85,47): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(85,47): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(85,47): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(85,47): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\ChartView.cpp(108,52): warning C4244: 'argument': conversion from 'double' to 'int32_t', possible loss of data
+  Checkbox.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,76): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,76): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,76): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,76): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,76): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,76): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,76): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,76): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,76): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,62): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,62): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,62): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,62): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,62): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,62): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,62): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,62): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,50): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,50): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,50): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,50): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,50): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,50): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,50): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,50): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,50): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,37): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,37): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,37): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,37): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,37): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,37): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,37): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,37): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\Checkbox.cpp(18,37): warning C4244:         ]
+  FunctionDetailsPage.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(30,47): warning C4267: '=': conversion from 'size_t' to 'int32_t', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,48): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,48): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,48): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,48): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,40): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,40): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,40): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,40): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(57,40): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(65,86): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(65,86): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(65,86): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(65,86): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(65,86): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(65,86): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(65,86): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(65,86): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(65,86): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(64,61): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(64,61): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(64,61): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(64,61): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(64,61): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(64,61): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(64,61): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(64,61): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(64,61): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(142,34): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,47): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,47): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,47): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,47): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,39): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,39): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,39): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(147,39): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(149,34): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,73): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,73): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,73): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,73): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,64): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,64): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,64): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,64): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(160,64): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,63): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,63): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,63): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,63): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,58): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,58): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,58): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,58): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(166,58): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(167,55): warning C4244: 'argument': conversion from 'int32_t' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(167,55): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(167,55): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(167,55): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(167,55): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(218,17): warning C4267: 'initializing': conversion from 'size_t' to 'int32_t', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(284,39): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(284,39): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(284,39): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(284,39): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(284,39): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(284,39): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(284,39): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(284,39): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionDetailsPage.cpp(284,39): warning C4244:         ]
+  FunctionManagerPage.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(135,98): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(135,98): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(135,98): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(135,98): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(135,98): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(135,98): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(135,98): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(135,98): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(135,98): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(151,28): warning C4267: '=': conversion from 'size_t' to 'int32_t', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(191,20): warning C4244: 'initializing': conversion from 'T' to 'int32_t', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(191,20): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(191,20): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(191,20): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionManagerPage.cpp(191,20): warning C4244:         ]
+  FunctionView.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,57): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,57): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,57): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,57): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,57): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,57): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,57): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,57): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,32): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,32): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,32): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,32): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\FunctionView.cpp(54,32): warning C4244:         ]
+  GUICommon.cpp
+  HelpPage.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,90): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,90): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,90): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,90): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,90): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,59): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,59): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,59): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,59): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,59): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,59): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,59): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(22,59): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,91): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,91): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,91): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,91): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,91): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,60): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,60): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,60): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,60): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,60): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,60): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,60): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,60): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(28,60): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(47,18): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(47,18): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(47,18): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(47,18): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(47,18): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(47,18): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(47,18): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(47,18): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(47,18): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(46,56): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(46,56): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(46,56): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(46,56): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(46,56): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(46,56): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(46,56): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(46,56): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(46,56): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,93): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,93): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,93): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,93): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,93): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,93): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,93): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,93): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,93): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,56): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,56): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,56): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,56): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,56): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,56): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,56): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,56): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(63,56): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,89): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,89): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,89): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,89): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,89): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,89): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,89): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,89): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,89): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,56): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,56): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,56): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,56): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,56): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,56): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,56): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,56): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(83,56): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,111): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,111): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,111): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,111): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,111): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,111): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,111): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,111): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,111): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,73): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,73): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,73): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,73): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,73): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,73): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,73): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(102,73): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(122,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(122,91): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(122,91): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(122,91): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(122,91): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(122,91): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(122,91): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(122,91): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(122,91): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,114): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,114): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,114): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,114): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,114): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,72): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,72): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,72): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(134,72): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(135,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(135,33): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(135,33): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(135,33): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(135,33): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,96): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,96): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,96): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,96): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,96): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,96): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,96): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,96): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,96): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,55): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,55): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,55): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,55): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,55): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,55): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,55): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,55): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(156,55): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,92): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,92): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,92): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,92): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,92): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,92): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,92): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,92): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,92): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,51): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,51): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,51): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,51): warning C4244:             T=unsigned int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,51): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,51): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,51): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,51): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\HelpPage.cpp(169,51): warning C4244:         ]
+  HorizontalLayout.cpp
+  IntegralCalculator.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,70): warning C4244: 'argument': conversion from 'int32_t' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,70): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,70): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,70): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,70): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,52): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,52): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,52): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,52): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,52): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,52): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,52): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,52): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(20,52): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,70): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,70): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,70): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,70): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,70): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,31): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,31): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,31): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,31): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(44,31): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,78): warning C4244: 'argument': conversion from 'int32_t' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,78): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,78): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,78): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,78): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,46): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,46): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,46): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,46): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(55,46): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\IntegralCalculator.cpp(124,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  LayoutBase.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\LayoutBase.cpp(48,24): warning C4267: '+=': conversion from 'size_t' to 'int32_t', possible loss of data
+  MainLayout.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(124,21): warning C4267: 'initializing': conversion from 'size_t' to 'int32_t', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,57): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,57): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,57): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,57): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,57): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,38): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,38): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,38): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(142,38): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,67): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,67): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,67): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,67): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,67): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,67): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,67): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,67): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,47): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,47): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,47): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,47): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,47): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,47): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,47): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,47): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\MainLayout.cpp(143,47): warning C4244:         ]
+  OptionBarLogic.cpp
+  OptionTab.cpp
+  PointNavigator.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,87): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,87): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,87): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,87): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,87): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,87): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,87): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,87): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,87): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,54): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,54): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,54): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,54): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,54): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,54): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,54): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,54): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(31,54): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(48,53): warning C4267: '=': conversion from 'size_t' to 'int32_t', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(97,11): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(97,11): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(97,11): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(97,11): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(97,11): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(98,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(98,42): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(98,42): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(98,42): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\PointNavigator.cpp(98,42): warning C4244:         ]
+  Compiling...
+  PreviewModeUI.cpp
+  SettingsPage.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\SettingsPage.cpp(27,84): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\SettingsPage.cpp(27,84): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\SettingsPage.cpp(27,84): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\SettingsPage.cpp(27,84): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\SettingsPage.cpp(27,84): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\SettingsPage.cpp(27,84): warning C4244:         and
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\SettingsPage.cpp(27,84): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\SettingsPage.cpp(27,84): warning C4244:             T=int
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\GUI\SettingsPage.cpp(27,84): warning C4244:         ]
+  StackedView.cpp
+  MathConcepts.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\MathConcepts.cpp(79,38): warning C4101: 'argument': unreferenced local variable
+  Tools.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(52,19): warning C4305: '=': truncation from 'int' to 'T'
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(52,19): warning C4305:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(52,19): warning C4305:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(52,19): warning C4305:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(52,19): warning C4305:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,66): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,66): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,66): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,66): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,66): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,58): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,58): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,58): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,58): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(58,58): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,31): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,31): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,31): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,31): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,31): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,50): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,50): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,50): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(60,50): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(72,19): warning C4305: '=': truncation from 'int' to 'T'
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(72,19): warning C4305:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(72,19): warning C4305:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(72,19): warning C4305:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(72,19): warning C4305:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,66): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,66): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,66): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,66): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,66): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,58): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,58): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,58): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,58): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(78,58): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,31): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,31): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,31): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,31): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,31): warning C4244:         ]
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,50): warning C4244:         with
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,50): warning C4244:         [
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,50): warning C4244:             T=float
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Tools.cpp(80,50): warning C4244:         ]
+  Validation.cpp
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Validation.cpp(135,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Validation.cpp(149,56): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Andrei C\source\repos\ChartVisualiser\ChartVisualiser\Validation.cpp(159,48): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+  Generating code
+  80 of 2071 functions ( 3.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    63 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  ChartVisualiser.vcxproj -> C:\Users\Andrei C\source\repos\ChartVisualiser\x64\Release\ChartVisualiser.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
