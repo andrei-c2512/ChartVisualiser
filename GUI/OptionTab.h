@@ -17,3 +17,5 @@ void initOptionTab(OptionTab* tab , sf::Rect<int> rect);
 void runOptionTab(OptionTab* tab , const Mouse& mouse);
 void drawOptionTab(sf::RenderWindow& window, OptionTab* tab);
 void destroyOptionTab(OptionTab* tab);
+
+void updatePalette(OptionTab& tab);

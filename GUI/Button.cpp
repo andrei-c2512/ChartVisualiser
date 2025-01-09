@@ -114,8 +114,15 @@ void drawButton(sf::RenderWindow& window , Button* button){
 		window.draw(rect);
 	}
 
-	if (button->iconDrawer) {
-		drawIcon(button->iconDrawer, window, button->rect , p.textColor);
+	if (button->iconWhenSelected) {
+		if (button->iconDrawer && button->state == ViewState::SELECTED) {
+			drawIcon(button->iconDrawer, window, button->rect, p.textColor);
+		}
+	}
+	else {
+		if (button->iconDrawer) {
+			drawIcon(button->iconDrawer, window, button->rect, p.textColor);
+		}
 	}
 }
 

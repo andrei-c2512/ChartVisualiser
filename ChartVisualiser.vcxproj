@@ -145,6 +145,7 @@
     <ClCompile Include="GUI\ChartDrawing.cpp" />
     <ClCompile Include="GUI\ChartLogic.cpp" />
     <ClCompile Include="GUI\ChartView.cpp" />
+    <ClCompile Include="GUI\Checkbox.cpp" />
     <ClCompile Include="GUI\FunctionManagerPage.cpp" />
     <ClCompile Include="GUI\FunctionView.cpp" />
     <ClCompile Include="GUI\GUICommon.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="GUI\OptionTab.cpp" />
     <ClCompile Include="GUI\PointNavigator.cpp" />
     <ClCompile Include="GUI\PreviewModeUI.cpp" />
+    <ClCompile Include="GUI\SettingsPage.cpp" />
     <ClCompile Include="GUI\SFHelper.cpp" />
     <ClCompile Include="GUI\FunctionDetailsPage.cpp" />
     <ClCompile Include="GUI\StackedView.cpp" />
@@ -179,6 +181,7 @@
     <ClInclude Include="GUI\Chart.h" />
     <ClInclude Include="GUI\ChartBackgrounnd.h" />
     <ClInclude Include="GUI\ChartView.h" />
+    <ClInclude Include="GUI\Checkbox.h" />
     <ClInclude Include="GUI\FunctionDetailsPage.h" />
     <ClInclude Include="GUI\FunctionManagerPage.h" />
     <ClInclude Include="GUI\FunctionView.h" />
@@ -200,6 +203,7 @@
     <ClInclude Include="GUI\OptionTab.h" />
     <ClInclude Include="GUI\Palette.h" />
     <ClInclude Include="GUI\SFHelper.h" />
+    <ClInclude Include="GUI\StringResources.hpp" />
     <ClInclude Include="GUI\TextEdit.h" />
     <ClInclude Include="MathConcepts.h" />
     <ClInclude Include="Operations.h" />

@@ -1,8 +1,15 @@
 #include "HorizontalLayout.h"
 
 
-Widgets::Layout::HorizontalLayout* Widgets::Layout::createHorizontalLayout(sf::Rect<int>& rect) {
+Widgets::Layout::HorizontalLayout* Widgets::Layout::createHorizontalLayout(sf::Rect<int> rect, 
+	Alignment al, SpacingType sp, const Margins& margins, int32_t spacing) 
+{
 	HorizontalLayout* layout = new HorizontalLayout;
+
+	layout->margin = margins;
+	layout->spacing = spacing;
+	layout->spacingType = sp;
+	layout->alignment = al;
 	layout->rect = rect;
 	return layout;
 }
@@ -21,6 +28,11 @@ void Widgets::Layout::applyLayout(HorizontalLayout& layout) {
 	case Alignment::Right:
 		newPosList = alignRight(layout.margin, layout.rect, layout.list, layout.spacing);
 		break;
+	}
+
+	for (int32_t i = 0; i < newPosList.size(); i++) {
+		layout.list[i]->left = newPosList[i].x;
+		layout.list[i]->top = newPosList[i].y;
 	}
 }
 

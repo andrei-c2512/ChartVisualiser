@@ -48,4 +48,5 @@ void destroyChartView(ChartView* view);
 void moveChartX(ChartView* view, int x);
 void moveChartY(ChartView* view, int y);
 
+void updatePalette(ChartView& view);
 #endif // CHARTVIEW_H_INCLUDED

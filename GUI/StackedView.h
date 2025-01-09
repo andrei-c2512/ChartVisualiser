@@ -7,6 +7,7 @@
 #include "HelpPage.h"
 #include "FunctionDetailsPage.h"
 #include "Chart.h"
+#include "SettingsPage.h"
 
 struct StackedView{
     sf::Rect<int> rect;
@@ -14,6 +15,7 @@ struct StackedView{
     FunctionManagerPage functionPage;
     FunctionDetailsPage functionDetails;
     HelpPage helpPage;
+    SettingsPage* settingsPage;
 
     Options option;
 };
@@ -21,7 +23,6 @@ struct StackedView{
 void initStackedView(StackedView* stackedView, sf::Rect<int> rect);
 void runStackedView(StackedView* stackedView, const Mouse& mouse, const Keyboard& kb, Chart& chart);
 void drawStackedView(sf::RenderWindow& window , StackedView* stackedView);
-void destroyStackedView(StackedView* view);
-
+void freeMem(StackedView* page);
 
 #endif // LAYOUT_H_INCLUDED

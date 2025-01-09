@@ -105,4 +105,5 @@ void calculateBreakpoints(Chart* chart);
 void setChartPos(Chart& chart ,const sf::Vector2f& pos);
 void highlightPoint(Chart& chart, const sf::Vector2f& pos);
 
+void updatePalette(Chart& chart);
 #endif // CHART_H_INCLUDED

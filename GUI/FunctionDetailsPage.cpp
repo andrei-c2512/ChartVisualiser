@@ -223,14 +223,17 @@ Domain getDomain(FunctionDetailsPage* page) {
 	float rightVal;
 
 	if (firstStr.size() >= 3 && firstStr.back() == 'f')
-		leftVal = std::numeric_limits<float>::min() * pow(-1, firstStr.size() == 4);
+		leftVal = std::numeric_limits<float>::min();
 	else
 		leftVal = stof(firstStr.data());
 
 	if (secondStr.size() >= 3 && firstStr.back() == 'f')
-		rightVal = std::numeric_limits<float>::max() * pow(-1, secondStr.size() == 4);
+		rightVal = std::numeric_limits<float>::max();
 	else
 		rightVal = stof(secondStr.data());
+
+	if (leftVal == std::numeric_limits<float>::min() && rightVal == std::numeric_limits<float>::max())
+		return {};
 
 	if (leftVal > rightVal) {
 		return {};

@@ -29,7 +29,7 @@ enum ViewState{
 enum Options {
     FunctionList,
     Analysis,
-    Integral,
+    Settings,
     Help,
     Count
 };

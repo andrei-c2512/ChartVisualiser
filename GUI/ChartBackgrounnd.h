@@ -23,4 +23,5 @@ void setChartBackgroundRect(ChartBackground* background, sf::Rect<int> rect);
 void drawChartBackground(sf::RenderWindow& window, ChartBackground* background);
 void setChartBackgroundZoom(ChartBackground* background, double zoom);
 
+void updatePalette(ChartBackground& bg);
 #endif // CHARTBACKGROUNND_H_INCLUDED

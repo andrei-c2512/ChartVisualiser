@@ -171,6 +171,12 @@
     <ClCompile Include="GUI\LayoutBase.cpp">
       <Filter>Source\GUI\BasicWidgets</Filter>
     </ClCompile>
+    <ClCompile Include="GUI\Checkbox.cpp">
+      <Filter>Source\GUI\BasicWidgets</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\SettingsPage.cpp">
+      <Filter>Source\GUI\Pages</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\FunctionManagerPage.h">
@@ -195,9 +201,6 @@
       <Filter>Header Files\GUI\CustomWidgets</Filter>
     </ClInclude>
     <ClInclude Include="GUI\PreviewModeUI.h">
-      <Filter>Header Files\GUI\CustomWidgets</Filter>
-    </ClInclude>
-    <ClInclude Include="GUI\OptionTab.h">
       <Filter>Header Files\GUI\CustomWidgets</Filter>
     </ClInclude>
     <ClInclude Include="GUI\MainLayout.h">
@@ -271,6 +274,15 @@
     </ClInclude>
     <ClInclude Include="GUI\LayoutBase.h">
       <Filter>Header Files\GUI\BasicWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\Checkbox.h">
+      <Filter>Header Files\GUI\BasicWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\StringResources.hpp">
+      <Filter>Header Files\GUI\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\OptionTab.h">
+      <Filter>Header Files\GUI\MainComponents</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

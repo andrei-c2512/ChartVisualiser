@@ -60,7 +60,7 @@ void drawFunctionView(sf::RenderWindow& window, FunctionView* view) {
 }
 void destroyFunctionView(FunctionView* view) {
 	destroyOptionTab(view->optionTab);
-	destroyStackedView(view->stackedView);
+	freeMem(view->stackedView);
 
 	delete view->optionTab;
 	delete view->stackedView;

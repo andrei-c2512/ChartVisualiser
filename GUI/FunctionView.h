@@ -19,4 +19,5 @@ void setRect(FunctionView* view, sf::Rect<int> rect);
 void drawFunctionView(sf::RenderWindow& window, FunctionView* view);
 void destroyFunctionView(FunctionView* view);
 
+void updatePalette(FunctionView& view);
 #endif // FUNCTIONVIEW_H_INCLUDED

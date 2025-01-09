@@ -36,7 +36,7 @@ std::string toString(const Equation& eq) noexcept {
 
 std::string toString(const Domain& domain) noexcept {
 	std::stringstream ss1;
-	if (domain.left == std::numeric_limits<float>::min()) {
+	if (domain.left == -100000) {
 		ss1 << "-inf";
 	}
 	else
@@ -46,7 +46,7 @@ std::string toString(const Domain& domain) noexcept {
 	}
 
 	std::stringstream ss2;
-	if (domain.right == std::numeric_limits<float>::max()) {
+	if (domain.right == 100000) {
 		ss2 << "inf";
 	}
 	else

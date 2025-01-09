@@ -41,4 +41,6 @@ void runMainLayout(MainLayout* layout, const Mouse& mouse, const Keyboard& kb);
 void drawMainLayout(sf::RenderWindow& window , MainLayout* layout);
 void destroyMainLayout(MainLayout* layout);
 
+
+void updatePalette(MainLayout& layout);
 #endif // MAINLAYOUT_H_INCLUDED

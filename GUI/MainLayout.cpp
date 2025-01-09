@@ -163,3 +163,7 @@ void destroyMainLayout(MainLayout* layout){
 
     delete layout->previewModeUI;
 }
+
+void updatePalette(MainLayout& layout) {
+
+}

@@ -2,8 +2,27 @@
 #include <iostream>
 
 static sf::Font _font;
+static Palette::Theme theme = Palette::Theme::LIGHT;
 
 std::vector<sf::Color> chartColorList;
+
+static sf::Color mainBgColors[] = { sf::Color(252, 252, 252) , sf::Color(44, 54, 63)};
+static sf::Color mainTextColors[] = { sf::Color::Black , sf::Color::White};
+static sf::Color mainContourColors[] = { sf::Color(44, 54, 63)  , sf::Color(84, 104, 120)};
+static sf::Color chartBgColors[] = { sf::Color(252, 252, 252) , sf::Color(44, 54, 63) };
+static sf::Color axisColors[] = { sf::Color::Black , sf::Color::White};
+static sf::Color highlightColors[] = { sf::Color(255, 73, 92) , sf::Color(215, 78, 9)};
+static sf::Color bgLineColors[] = { sf::Color(200, 200, 200) , sf::Color(75, 93, 108)};
+static sf::Color chartTextColors[] = { sf::Color::Black , sf::Color::White};
+static sf::Color optionTabBgColors[] = { sf::Color(113, 137, 255) , sf::Color(215, 78, 9) };
+static sf::Color funcViewContentBgColors[] = {sf::Color(245, 245, 245) , sf::Color(44, 54, 63) };
+static sf::Color optionTabMarginColors[] = {sf::Color(133, 153, 255) , sf::Color(245, 95, 20)};
+
+static sf::Color buttonIconColors[] = { sf::Color::Black , sf::Color::White };
+
+void Palette::setTheme(Theme theme0) {
+	theme = theme0;
+}
 void Palette::init() {
 	std::string path = "GUI/Resources/Quicksand_Book.otf";
 
@@ -21,7 +40,6 @@ void Palette::init() {
 	chartColorList.emplace_back(sf::Color(30, 56, 136));
 	chartColorList.emplace_back(sf::Color(193, 120, 23));
 	chartColorList.emplace_back(sf::Color(35, 150, 127));
-	chartColorList.emplace_back(sf::Color(11, 3, 45));
 	chartColorList.emplace_back(sf::Color(137, 2, 62));
 	chartColorList.emplace_back(sf::Color(52, 228, 234));
 }
@@ -33,57 +51,57 @@ sf::Color Palette::chartColor(int16_t ind) {
 	return chartColorList[ind];
 }
 sf::Color Palette::mainBackgroundColor() {
-	return sf::Color(252, 252, 252);
+	return mainBgColors[theme];
 }
 sf::Color Palette::mainTextColor() {
-	return sf::Color::Black;
+	return mainTextColors[theme];
 }
 sf::Color Palette::mainContourColor() {
-	return sf::Color(44, 54, 63);
+	return mainContourColors[theme];
 }
 sf::Color Palette::chartBackgroundColor() {
-	return sf::Color(252, 252, 252);
+	return chartBgColors[theme];
 }
 
 sf::Color Palette::axisColor() {
-	return sf::Color::Black;
+	return axisColors[theme];
 }
 sf::Color Palette::highlightColor() {
-	return sf::Color(255, 73, 92);
+	return highlightColors[theme];
 }
 
 sf::Color Palette::backgroundLineColor() {
-	return sf::Color(200, 200, 200);
+	return bgLineColors[theme];
 }
 
 sf::Color Palette::chartTextColor() {
-	return sf::Color(0 , 0 , 0);
+	return chartTextColors[theme];
 }
 
 const sf::Font& Palette::font() {
 	return _font;
 }
 
+sf::Color Palette::optionTabBackground() {
+	return optionTabBgColors[theme];
+}
+sf::Color Palette::functionViewContentBackground() {
+	return funcViewContentBgColors[theme];
+}
+sf::Color Palette::optionTabMarginColor() {
+	return optionTabMarginColors[theme];
+
+}
 std::array<ViewPalette, 4> Palette::optionButtonPalette() {
 	std::array<ViewPalette, 4> pal;
-	pal[0] = { sf::Color(44, 54, 63), optionTabBackground() , optionTabBackground() };
-	pal[1] = { sf::Color(255, 187, 92) , sf::Color(112, 136, 255) , sf::Color(112, 136, 255)};
-	pal[2] = { sf::Color(255, 159, 28) , sf::Color(112, 136, 255) , sf::Color(112, 136, 255) };
-	pal[3] = { sf::Color(255, 159, 28) , sf::Color(112, 136, 255) , sf::Color(112, 136, 255) };
+	pal[0] = { sf::Color(44, 54, 63)   ,  sf::Color::Transparent,  sf::Color::Transparent };
+	pal[1] = { sf::Color(255, 187, 92) ,  sf::Color::Transparent,  sf::Color::Transparent};
+	pal[2] = { sf::Color(255, 159, 28) ,  sf::Color::Transparent,  sf::Color::Transparent };
+	pal[3] = { sf::Color(255, 159, 28) ,  sf::Color::Transparent,  sf::Color::Transparent };
 
 	return pal;
 }
 
-
-sf::Color Palette::optionTabBackground() {
-	return sf::Color(113, 137, 255);
-}
-sf::Color Palette::functionViewContentBackground() {
-	return sf::Color(245, 245, 245);
-}
-sf::Color Palette::optionTabMarginColor() {
-	return sf::Color(133, 153, 255);
-}
 
 std::array<ViewPalette, 4> Palette::loadFileButtonPalette() {
 	std::array<ViewPalette, 4> pal;
@@ -130,6 +148,26 @@ std::array<ViewPalette, 4> Palette::navigationButtonPalette() {
 	pal[1] = { sf::Color(255, 187, 92) , sf::Color::Transparent , sf::Color::Transparent };
 	pal[2] = { sf::Color(255, 159, 28) , sf::Color::Transparent , sf::Color::Transparent };
 	pal[3] = { sf::Color(255, 159, 28) , sf::Color::Transparent , sf::Color::Transparent };
+
+	return pal;
+}
+
+std::array<ViewPalette, 4> Palette::checkboxPalette() {
+	std::array<ViewPalette, 4> pal;
+	pal[0] = { sf::Color(44, 54, 63)   , sf::Color(245, 245, 245), sf::Color(44, 54, 63) };
+	pal[1] = { sf::Color(255, 187, 92) , sf::Color(245, 245, 245), sf::Color(44, 54, 63) };
+	pal[2] = { sf::Color(255, 159, 28) , sf::Color(245, 245, 245), sf::Color(44, 54, 63) };
+	pal[3] = { sf::Color(255, 159, 28) , sf::Color(245, 245, 245), sf::Color(44, 54, 63) };
+
+	return pal;
+}
+
+std::array<ViewPalette, 4> Palette::themeButtonPalette() {
+	std::array<ViewPalette, 4> pal;
+	pal[0] = { sf::Color(44, 54, 63)   , sf::Color(245, 245, 245), sf::Color::Transparent };
+	pal[1] = { sf::Color(255, 187, 92) , sf::Color(245, 245, 245), sf::Color::Transparent };
+	pal[2] = { sf::Color(255, 159, 28) , sf::Color(245, 245, 245), sf::Color::Transparent };
+	pal[3] = { sf::Color(255, 159, 28) , sf::Color(245, 245, 245), sf::Color::Transparent };
 
 	return pal;
 }

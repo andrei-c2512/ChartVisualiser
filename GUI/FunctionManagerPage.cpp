@@ -73,7 +73,7 @@ int32_t getFunctionBoxHeight(FunctionBox* box) {
 }
 
 void validateString(FunctionBox& box) {
-	std::string str = box.textEdit.text;
+	/*std::string str = box.textEdit.text;
 	StatusCode result = validate(str);
 
 	std::string message;
@@ -102,11 +102,11 @@ void validateString(FunctionBox& box) {
 		message = "Found out of place character";
 		break;
 	}
-	box.errorMessage.setString(message);
+	box.errorMessage.setString(message);*/
 
-	if (result != StatusCode::OK) {
-		box.textEdit.done = false;
-	}
+	/*if (result != StatusCode::OK) {
+		//box.textEdit.done = false;
+	}*/
 }
 void runFunctionBox(FunctionBox* box, const Mouse& mouse, const Keyboard& kb) {
 	runButton(&box->deleteBtn, mouse);
@@ -138,7 +138,6 @@ void initFunctionManagerPage(FunctionManagerPage* page, sf::Rect<int> rect) {
 	box->id = 0;
 	box->funcColor = Palette::chartColor(0);
 	box->textEdit.text = getRandomFunction();
-	box->textEdit.text = "(x#(-11))*(sqr(x)*cos(23/x))+(x=(-11))*0";
 	box->textEdit.done = true;
 
 

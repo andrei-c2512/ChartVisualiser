@@ -8,6 +8,8 @@ void initStackedView(StackedView* stackedView, sf::Rect<int> rect) {
 	initFunctionManagerPage(&stackedView->functionPage, rect);
 	initHelpPage(&stackedView->helpPage,rect);
 	initFunctionDetailsPage(&stackedView->functionDetails, rect);
+
+	stackedView->settingsPage = createSettingsPage(rect);
 }
 void runStackedView(StackedView* stackedView , const Mouse& mouse, const Keyboard& kb , Chart& chart) {
 	switch (stackedView->option) {
@@ -17,7 +19,8 @@ void runStackedView(StackedView* stackedView , const Mouse& mouse, const Keyboar
 	case Options::Analysis:
 		runFunctionDetailsPage(&stackedView->functionDetails, mouse, kb , chart);
 		break;
-	case Options::Integral:
+	case Options::Settings:
+		runSettingsPage(*stackedView->settingsPage, mouse);
 		break;
 	case Options::Help:
 		break;
@@ -33,7 +36,8 @@ void drawStackedView(sf::RenderWindow& window, StackedView* stackedView) {
 	case Options::Analysis:
 		drawFunctionDetailsPage(window, &stackedView->functionDetails);
 		break;
-	case Options::Integral:
+	case Options::Settings:
+		drawSettingsPage(window, *stackedView->settingsPage);
 		break;
 	case Options::Help:
 		drawHelpPage(window, &stackedView->helpPage);
@@ -42,7 +46,9 @@ void drawStackedView(sf::RenderWindow& window, StackedView* stackedView) {
 		break;
 	}
 }
-void destroyStackedView(StackedView* view) {
+void freeMem(StackedView* view) {
 	destroyFunctionManagerPage(&view->functionPage);
 	freeMem(&view->functionDetails);
+	freeMem(view->settingsPage);
 }
+

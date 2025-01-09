@@ -30,9 +30,11 @@ void drawChartBackground(sf::RenderWindow& window, ChartBackground* background){
     else
     {
         sf::RectangleShape rect;
-        rect.setFillColor(Palette::mainBackgroundColor());
+        rect.setFillColor(Palette::chartBackgroundColor());
         rect.setPosition(startX, startY);
         rect.setSize(sf::Vector2f(background->rect.width, background->rect.height));
+
+        window.draw(rect);
     }
 
 

@@ -31,8 +31,8 @@ struct Equation {
 };
 
 struct Domain {
-	float left = std::numeric_limits<float>::min();
-	float right = std::numeric_limits<float>::max();
+	float left = -100000;
+	float right = 100000;
 
 	bool openLeft = false;
 	bool openRight = false;

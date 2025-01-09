@@ -32,7 +32,7 @@ struct Button{
     IconDrawer* iconDrawer = nullptr;
 
     bool drawCircle = false;
-
+    bool iconWhenSelected = false;
     std::function<void()> onClick;
 };
 

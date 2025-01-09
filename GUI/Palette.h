@@ -12,7 +12,12 @@ struct ViewPalette {
 };
 
 namespace Palette {
+    enum  Theme {
+        LIGHT ,
+        DARK
+    };
     void init();
+    void setTheme(Theme theme);
     sf::Color mainBackgroundColor();
     sf::Color mainTextColor();
     sf::Color mainContourColor();
@@ -35,6 +40,8 @@ namespace Palette {
     std::array<ViewPalette, 4> addButtonPalette();
     std::array<ViewPalette, 4> randomButtonPalette();
     std::array<ViewPalette, 4> navigationButtonPalette();
+    std::array<ViewPalette, 4> checkboxPalette();
+    std::array<ViewPalette, 4> themeButtonPalette();
 }
 
 
