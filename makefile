@@ -14,10 +14,11 @@ C_DEP_FLAGS= -MP -MD
 #source diretories
 SRC_DIRS=./src/ ./src/GUI/
 #all of the include directories , separated for C and C++ 
-INC_DIRS_CXX=./include/SFML/ 
-INC_DIRS_C=./include/tinyfiledialog/
+INC_DIRS_CXX=include/thirdparty include/chart_visualiser  include/chart_visualiser/GUI
+INC_DIRS_C=include/thirdparty/tinyfiledialog/
 
 INCLUDE_DIR=include
+INCLUDE_DIR_3RD=include/thirdparty
 #build directories
 BUILD_DIR=build
 CXX_OBJ_DIR=$(BUILD_DIR)/cpp_objects/
@@ -46,75 +47,81 @@ TARGET=ChartVisualiser.exe
 LIB_DIR=lib
 RESOURCES_DIR=resources
 
+
+.PHONY: include 
+
 install: 
-	echo "Cloning SFML" 
-	git clone --branch 2.6.2 https://github.com/SFML/SFML 
-	echo "Cloning tinyfiledialog" 
-	git clone "https://github.com/native-toolkit/libtinyfiledialogs" "tinyfiledialog" 
+	@echo "-- Cloning SFML" 
+	@git clone --branch 2.6.2 https://github.com/SFML/SFML 
+	@echo "-- Cloning tinyfiledialog" 
+	@git clone "https://github.com/native-toolkit/libtinyfiledialogs" "tinyfiledialog" 
 pre-link: 
-	echo "Building the libraries for your particular version of MinGW" 
-	cd SFML && if not exist build mkdir build
-	cd SFML/build && cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release && mingw32-make
-	echo "Succesfully built the necessary .dll and .lib files"
+	@echo "-- Building the libraries for your particular version of MinGW" 
+	@cd SFML && if not exist build mkdir build
+	@cd SFML/build && cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release && mingw32-make
+	@echo "-- Succesfully built the necessary .dll and .lib files"
 static-link:
-	echo "Moving the .lib files to their particular location"
-	if not exist $(LIB_DIR) mkdir $(LIB_DIR)
-	move SFML\build\lib\*.a $(LIB_DIR)
+	@echo "-- Moving the .lib files to their particular location"
+	@if not exist $(LIB_DIR) mkdir $(LIB_DIR)
+	@move SFML\build\lib\*.a $(LIB_DIR)
 
 dynamic-link:
-	echo "Moving the .dll files and other assets to their particular locations"
-	if not exist $(TARGET_DIR) mkdir $(TARGET_DIR)
-	move "SFML\build\lib\*.dll" $(TARGET_DIR)
-	move $(RESOURCES_DIR)\* $(TARGET_DIR)
-	move $(RESOURCES_DIR)\Resources $(TARGET_DIR)
+	@echo -- Moving the .dll files and other assets to their particular locations
+	@if not exist $(TARGET_DIR) mkdir $(TARGET_DIR)
+	@move "SFML\build\lib\*.dll" $(TARGET_DIR)
+	@move $(RESOURCES_DIR)\* $(TARGET_DIR)
+	@move $(RESOURCES_DIR)\Resources $(TARGET_DIR)
 include:
-	echo "Moving the include files to their particular locations"
-	if not exist "$(INCLUDE_DIR)" mkdir "$(INCLUDE_DIR)"
-	move "tinyfiledialog" "$(INCLUDE_DIR)" 
-	move "SFML/include/SFML" "$(INCLUDE_DIR)"
-	if exist "SFML" rmdir /s /q "SFML"
+	@echo -- Moving the include files to their particular locations
+	@if not exist include\thirdparty mkdir include\thirdparty
+	@move tinyfiledialog $(INCLUDE_DIR_3RD) 
+	@move SFML/include/SFML $(INCLUDE_DIR_3RD)
+	@if exist SFML rmdir /s /q SFML
 prepare:
-	if not exist $(call winpath,$(CXX_OBJ_DIR)) mkdir $(call winpath,$(CXX_OBJ_DIR))
-	if not exist $(call winpath,$(C_OBJ_DIR)) mkdir $(call winpath,$(C_OBJ_DIR))
+	@if not exist $(call winpath,$(CXX_OBJ_DIR)) mkdir $(call winpath,$(CXX_OBJ_DIR))
+	@if not exist $(call winpath,$(C_OBJ_DIR)) mkdir $(call winpath,$(C_OBJ_DIR))
 
 clean-dep:
-	echo "Cleaning up every dependency and the whole setup"
-	if not exist $(RESOURCES_DIR) mkdir $(RESOURCES_DIR)
-	del /s /q "$(TARGET_DIR)\*.dll" "$(TARGET_DIR)\$(TARGET)"
-	if exist $(TARGET_DIR) move "$(TARGET_DIR)\*" "$(RESOURCES_DIR)"
-	move $(TARGET_DIR)/Resources "$(RESOURCES_DIR)"
-	if exist $(TARGET_DIR) rmdir /s /q $(TARGET_DIR) 
-	if exist $(LIB_DIR) rmdir /s /q $(LIB_DIR) 
-	if exist $(INCLUDE_DIR) rmdir /s /q $(INCLUDE_DIR) 
+	@echo Cleaning up every dependency and the whole setup
+	@if not exist $(RESOURCES_DIR) mkdir $(RESOURCES_DIR)
+	-@del /s /q "$(TARGET_DIR)\*.dll" "$(TARGET_DIR)\$(TARGET)"
+	@if exist $(TARGET_DIR) move "$(TARGET_DIR)\*" "$(RESOURCES_DIR)"
+	-@move $(TARGET_DIR)/Resources "$(RESOURCES_DIR)"
+	@if exist $(TARGET_DIR) rmdir /s /q $(TARGET_DIR) 
+	@if exist $(LIB_DIR) rmdir /s /q $(LIB_DIR) 
+	@if exist include\thirdparty rmdir /s /q include\thirdparty
 set-up : 
-	make install
-	make pre-link
-	make static-link
-	make dynamic-link
-	make include
+	@make install
+	@make pre-link
+	@make static-link
+	@make dynamic-link
+	@make include
+
 all : prepare $(TARGET)
 
 #SFML isn't actually turned into obj files , cause it doesn't have any .cpp or .c files  
 $(TARGET) : $(OBJ_C) $(OBJ_CXX) 
-	$(CXX) $(CXX_FLAGS) -I$(INCLUDE_DIR) -L$(SFML_LIB_DIR) $(OBJ_CXX) $(OBJ_C) $(addprefix -l:,$(SFML_LIBRARIES)) $(addprefix -l,$(WINDOWS_LIBRARIES)) -o $(TARGET_DIR)/$(TARGET)
+	@echo -- Creating the executable...
+	@$(CXX) $(CXX_FLAGS) $(addprefix -I,$(INC_DIRS_CXX)) -L$(SFML_LIB_DIR) $(OBJ_C) $(OBJ_CXX) $(addprefix -l:,$(SFML_LIBRARIES)) $(addprefix -l,$(WINDOWS_LIBRARIES)) -o $(TARGET_DIR)/$(TARGET)
+	@echo -- Done! You can find it at $(TARGET_DIR)/$(TARGET)
 #for every cpp file that is changed , we recompile the associated object file
 
 $(CXX_OBJ_DIR)%.o : %.cpp
-	$(CXX) $(CXX_FLAGS) $(CXX_DEP_FLAGS) -I$(INCLUDE_DIR) -L$(SFML_LIB_DIR) -c $< -o $@
-
+	@echo -- Compiling $<
+	@$(CXX) $(CXX_FLAGS) $(CXX_DEP_FLAGS) $(addprefix -I,$(INC_DIRS_CXX)) -L$(SFML_LIB_DIR) -c $< -o $@
 $(C_OBJ_DIR)%.o : %.c
-	$(CC) $(CC_FLAGS) $(C_DEP_FLAGS) -c $< -o $@
-
+	@echo -- Compiling $<
+	@$(CC) $(CC_FLAGS) $(C_DEP_FLAGS) $(addprefix -I,$(INC_DIRS_C)) -c $< -o $@
 src_files:
-	echo "C++ source files: "
-	echo "$(SRC_CXX)"
-	echo "C source files:"
-	echo "$(SRC_C)"
+	@echo "C++ source files: "
+	@echo "$(SRC_CXX)"
+	@echo "C source files:"
+	@echo "$(SRC_C)"
 obj_files:
-	echo "C++ object files:"
-	echo "$(OBJ_CXX)"
-	echo "C object files:"
-	echo "$(OBJ_C)"
+	@echo "C++ object files:"
+	@echo "$(OBJ_CXX)"
+	@echo "C object files:"
+	@echo "$(OBJ_C)"
 clean:
 	rmdir /s /q $(BUILD_DIR) 
 #this is used in case I edit this file and save on windows mode(meaning I add '\r' after every end of line)

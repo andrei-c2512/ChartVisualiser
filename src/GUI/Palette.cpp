@@ -2,7 +2,7 @@
 #include <iostream>
 
 static sf::Font _font;
-static Palette::Theme theme = Palette::Theme::DARK;
+static Palette::Theme theme = Palette::Theme::LIGHT;
 
 std::vector<sf::Color> chartColorList;
 

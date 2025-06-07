@@ -8,7 +8,7 @@
 #include "RandomFunction.h"
 
 #define WINDOW_WIDTH 1920
-#define WINDOW_HEIGHT 1000
+#define WINDOW_HEIGHT 1080
 
 
 using namespace std;
